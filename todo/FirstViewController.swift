@@ -11,6 +11,12 @@ import JTAppleCalendar
 
 class FirstViewController: UIViewController {
 
+    var numberOfRows = 6
+    var currentSelectedDate: Date?
+    @IBOutlet weak var monthYearLabel: UILabel!
+    @IBOutlet weak var calendarView: JTAppleCalendarView!
+    @IBOutlet weak var calendarHeightConstraint: NSLayoutConstraint!
+    @IBOutlet weak var weekMonthToggleButton: UIButton!
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -21,6 +27,7 @@ class FirstViewController: UIViewController {
         cell.dateLabel.text = cellState.text
         handleCellTextColor(cell: cell, cellState: cellState)
         handleCellSelected(cell: cell, cellState: cellState)
+        handleMonthYearState(cell: cell, cellState: cellState)
     }
     
     func handleCellTextColor(cell: DateCell, cellState: CellState) {
@@ -39,7 +46,60 @@ class FirstViewController: UIViewController {
             cell.selectedView.isHidden = true
         }
     }
-
+    
+    func handleMonthYearState(cell: DateCell, cellState: CellState) {
+        let month = cellState.dateSection().month
+        switch month {
+        case 1:
+            monthYearLabel.text = "January"
+        case 2:
+            monthYearLabel.text = "February"
+        case 3:
+            monthYearLabel.text = "March"
+        case 4:
+            monthYearLabel.text = "April"
+        case 5:
+            monthYearLabel.text = "May"
+        case 6:
+            monthYearLabel.text = "June"
+        case 7:
+            monthYearLabel.text = "July"
+        case 8:
+            monthYearLabel.text = "August"
+        case 9:
+            monthYearLabel.text = "September"
+        case 10:
+            monthYearLabel.text = "October"
+        case 11:
+            monthYearLabel.text = "November"
+        default:
+            monthYearLabel.text = "December"
+        }
+        let formatter = DateFormatter()
+        formatter.dateFormat = "yyyy"
+        let yearString = formatter.string(from: cellState.dateSection().range.end)
+        monthYearLabel.text = monthYearLabel.text! + " " + yearString
+    }
+    @IBAction func weekMonthToggleButton(_ sender: UIButton) {
+        if self.currentSelectedDate == nil {
+            self.currentSelectedDate = Date()
+        }
+        UIView.animate(withDuration: 0.2, animations: {
+            if self.numberOfRows == 6 {
+                self.numberOfRows = 1
+                self.calendarHeightConstraint.constant = 30
+                self.weekMonthToggleButton.transform = self.weekMonthToggleButton.transform.rotated(by: CGFloat(Double.pi))
+            }
+            else {
+                self.numberOfRows = 6
+                self.calendarHeightConstraint.constant = 180
+                self.weekMonthToggleButton.transform = self.weekMonthToggleButton.transform.rotated(by: CGFloat(Double.pi))
+            }
+            self.view.layoutIfNeeded()
+            self.calendarView.reloadData(withanchor: self.currentSelectedDate)
+        })
+    }
+    
 }
 
 extension FirstViewController: JTAppleCalendarViewDataSource {
@@ -48,7 +108,16 @@ extension FirstViewController: JTAppleCalendarViewDataSource {
         formatter.dateFormat = "yyyy MM dd"
         let startDate = formatter.date(from: "2019 06 01")!
         let endDate = formatter.date(from: "2019 07 31")!
-        return ConfigurationParameters(startDate: startDate, endDate: endDate, hasStrictBoundaries: false)
+        if numberOfRows == 6 {
+            return ConfigurationParameters(startDate: startDate, endDate: endDate, numberOfRows: numberOfRows)
+        } else {
+            return ConfigurationParameters(startDate: startDate,
+                                           endDate: endDate,
+                                           numberOfRows: numberOfRows,
+                                           generateInDates: .forFirstMonthOnly,
+                                           generateOutDates: .off,
+                                           hasStrictBoundaries: false)
+        }
     }
 }
 
@@ -63,6 +132,7 @@ extension FirstViewController: JTAppleCalendarViewDelegate {
     }
     func calendar(_ calendar: JTAppleCalendarView, didSelectDate date: Date, cell: JTAppleCell?, cellState: CellState) {
         configureCell(view: cell, cellState: cellState)
+        self.currentSelectedDate = cellState.date
     }
     
     func calendar(_ calendar: JTAppleCalendarView, didDeselectDate date: Date, cell: JTAppleCell?, cellState: CellState) {
