@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		20A4BDCE22AE449200833BD2 /* DateCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20A4BDCD22AE449200833BD2 /* DateCell.swift */; };
+		20A4BDD022B13F1700833BD2 /* mainTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20A4BDCF22B13F1700833BD2 /* mainTabBarViewController.swift */; };
+		20A4BDD222B143F200833BD2 /* addTasksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20A4BDD122B143F200833BD2 /* addTasksViewController.swift */; };
+		20A4BDD422B2889200833BD2 /* datePickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20A4BDD322B2889200833BD2 /* datePickerViewController.swift */; };
 		20BE858B22AD60E900988390 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20BE858A22AD60E900988390 /* AppDelegate.swift */; };
 		20BE858D22AD60E900988390 /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20BE858C22AD60E900988390 /* FirstViewController.swift */; };
 		20BE858F22AD60E900988390 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20BE858E22AD60E900988390 /* SecondViewController.swift */; };
@@ -19,6 +22,9 @@
 
 /* Begin PBXFileReference section */
 		20A4BDCD22AE449200833BD2 /* DateCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateCell.swift; sourceTree = "<group>"; };
+		20A4BDCF22B13F1700833BD2 /* mainTabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = mainTabBarViewController.swift; sourceTree = "<group>"; };
+		20A4BDD122B143F200833BD2 /* addTasksViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = addTasksViewController.swift; sourceTree = "<group>"; };
+		20A4BDD322B2889200833BD2 /* datePickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = datePickerViewController.swift; sourceTree = "<group>"; };
 		20BE858722AD60E900988390 /* todo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = todo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		20BE858A22AD60E900988390 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		20BE858C22AD60E900988390 /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
@@ -82,6 +88,9 @@
 				20BE859522AD60EA00988390 /* LaunchScreen.storyboard */,
 				20BE859822AD60EA00988390 /* Info.plist */,
 				20A4BDCD22AE449200833BD2 /* DateCell.swift */,
+				20A4BDCF22B13F1700833BD2 /* mainTabBarViewController.swift */,
+				20A4BDD122B143F200833BD2 /* addTasksViewController.swift */,
+				20A4BDD322B2889200833BD2 /* datePickerViewController.swift */,
 			);
 			path = todo;
 			sourceTree = "<group>";
@@ -210,7 +219,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				20BE858F22AD60E900988390 /* SecondViewController.swift in Sources */,
+				20A4BDD222B143F200833BD2 /* addTasksViewController.swift in Sources */,
 				20BE858B22AD60E900988390 /* AppDelegate.swift in Sources */,
+				20A4BDD022B13F1700833BD2 /* mainTabBarViewController.swift in Sources */,
+				20A4BDD422B2889200833BD2 /* datePickerViewController.swift in Sources */,
 				20BE858D22AD60E900988390 /* FirstViewController.swift in Sources */,
 				20A4BDCE22AE449200833BD2 /* DateCell.swift in Sources */,
 			);
