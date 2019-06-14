@@ -37,6 +37,11 @@ class addTasksViewController: UIViewController {
         }
     }
     @IBAction func endTimeButton(_ sender: Any) {
+        let mainStoryboard = UIStoryboard(name: "Main", bundle: Bundle.main)
+        if let vc = mainStoryboard.instantiateViewController(withIdentifier: "datePickerViewController") as? datePickerViewController
+        {
+            customPresentViewController(self.presenter, viewController: vc, animated: true, completion: nil)
+        }
     }
     override func viewDidLoad() {
         super.viewDidLoad()
