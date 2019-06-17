@@ -8,22 +8,12 @@
 
 import UIKit
 import Presentr
+import PMSuperButton
 
 class addTasksViewController: UIViewController {
 
-    var dateTimePicker: UIDatePicker!
-    
-    let presenter: Presentr = {
-        let width = ModalSize.full
-        let height = ModalSize.custom(size: 266)
-        let center = ModalCenterPosition.customOrigin(origin: CGPoint(x: 0, y: UIScreen.main.bounds.size.height - 266))
-        let customType = PresentationType.custom(width: width, height: height, center: center)
-        let customPresenter = Presentr(presentationType: customType)
-        customPresenter.transitionType = .coverHorizontalFromLeft
-        customPresenter.transitionType = .crossDissolve
-        customPresenter.dismissAnimated = true
-        return customPresenter
-    }()
+    @IBOutlet weak var startTimeOutlet: PMSuperButton!
+    @IBOutlet weak var endTimeOutlet: PMSuperButton!
     
     @IBAction func backToTabBarViewButton(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)
@@ -31,21 +21,37 @@ class addTasksViewController: UIViewController {
     
     @IBAction func startTimeButton(_ sender: Any) {
         let mainStoryboard = UIStoryboard(name: "Main", bundle: Bundle.main)
-        if let vc = mainStoryboard.instantiateViewController(withIdentifier: "datePickerViewController") as? datePickerViewController
-        {
-            customPresentViewController(self.presenter, viewController: vc, animated: true, completion: nil)
+        if let vc = mainStoryboard.instantiateViewController(withIdentifier: "datePickerViewController") as? datePickerViewController {
+            vc.onSetDateTime = { (dateTime:String) -> () in
+                self.startTimeOutlet.setTitle(dateTime, for: .normal)
+            }
+            self.present(vc, animated: false, completion: nil)
         }
     }
     @IBAction func endTimeButton(_ sender: Any) {
         let mainStoryboard = UIStoryboard(name: "Main", bundle: Bundle.main)
-        if let vc = mainStoryboard.instantiateViewController(withIdentifier: "datePickerViewController") as? datePickerViewController
-        {
-            customPresentViewController(self.presenter, viewController: vc, animated: true, completion: nil)
+        if let vc = mainStoryboard.instantiateViewController(withIdentifier: "datePickerViewController") as? datePickerViewController {
+            vc.onSetDateTime = { (dateTime:String) -> () in
+                self.endTimeOutlet.setTitle(dateTime, for: .normal)
+            }
+            self.present(vc, animated: false, completion: nil)
         }
     }
+    
+    @IBAction func addTodoButton(_ sender: Any) {
+        self.dismiss(animated: true, completion: nil)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         // Do any additional setup after loading the view.
+        let formatter = DateFormatter()
+        formatter.dateStyle = .medium
+        formatter.timeStyle = .short
+        let dateTime = " " + formatter.string(from: Date())
+        self.startTimeOutlet.setTitle(dateTime, for: .normal)
+        self.endTimeOutlet.setTitle(dateTime, for: .normal)
     }
+    
+    
 }
