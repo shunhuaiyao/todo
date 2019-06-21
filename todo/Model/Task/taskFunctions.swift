@@ -20,9 +20,9 @@ class taskFunctions {
                 Data.taskModels.append(taskModel(title: "call meatball"))
                 Data.taskModels.append(taskModel(title: "buy eggs"))
             }
-        }
-        DispatchQueue.main.async {
-            completion()
+            DispatchQueue.main.async {
+                completion()
+            }
         }
     }
     

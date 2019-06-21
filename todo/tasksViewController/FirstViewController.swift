@@ -17,9 +17,14 @@ class FirstViewController: UIViewController {
     @IBOutlet weak var calendarView: JTAppleCalendarView!
     @IBOutlet weak var calendarHeightConstraint: NSLayoutConstraint!
     @IBOutlet weak var weekMonthToggleButton: UIButton!
+    @IBOutlet weak var todoTasksTableView: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        todoTasksTableView.dataSource = self
+        taskFunctions.readTasks(completion: { [unowned self] in
+            self.todoTasksTableView.reloadData()
+        })
     }
     
     
@@ -138,5 +143,20 @@ extension FirstViewController: JTAppleCalendarViewDelegate {
     
     func calendar(_ calendar: JTAppleCalendarView, didDeselectDate date: Date, cell: JTAppleCell?, cellState: CellState) {
         configureCell(view: cell, cellState: cellState)
+    }
+}
+
+extension FirstViewController: UITabBarDelegate, UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return Data.taskModels.count
+    }
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        var cell = tableView.dequeueReusableCell(withIdentifier: "cell")
+        
+        if cell == nil {
+           cell = UITableViewCell(style: UITableViewCell.CellStyle.default, reuseIdentifier: "cell")
+        }
+        cell!.textLabel?.text = Data.taskModels[indexPath.row].title
+        return cell!
     }
 }

@@ -135,9 +135,15 @@
                                     <action selector="weekMonthToggleButton:" destination="9pv-A4-QxB" eventType="touchUpInside" id="AaR-GZ-i3G"/>
                                 </connections>
                             </button>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="RMD-j0-5Eh">
+                                <rect key="frame" x="0.0" y="249" width="320" height="270"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </tableView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="RMD-j0-5Eh" firstAttribute="bottom" secondItem="PQr-Ze-W5v" secondAttribute="bottom" id="4zw-yX-daX"/>
+                            <constraint firstItem="RMD-j0-5Eh" firstAttribute="top" secondItem="WrC-Hr-fqu" secondAttribute="bottom" constant="8" id="74x-zu-cF1"/>
                             <constraint firstItem="WrC-Hr-fqu" firstAttribute="top" secondItem="hRu-a4-HeD" secondAttribute="bottom" id="B6f-RL-CeX"/>
                             <constraint firstItem="1E7-3z-Kob" firstAttribute="centerX" secondItem="tsR-hK-woN" secondAttribute="centerX" id="C9o-bF-5hJ"/>
                             <constraint firstItem="hRu-a4-HeD" firstAttribute="centerX" secondItem="tsR-hK-woN" secondAttribute="centerX" id="EAF-BP-4HZ"/>
@@ -149,15 +155,19 @@
                             <constraint firstItem="map-Mn-TjT" firstAttribute="leading" secondItem="1E7-3z-Kob" secondAttribute="trailing" constant="8" id="f30-ua-1jc"/>
                             <constraint firstItem="hRu-a4-HeD" firstAttribute="top" secondItem="1E7-3z-Kob" secondAttribute="bottom" id="kmx-rw-Daw"/>
                             <constraint firstItem="map-Mn-TjT" firstAttribute="top" secondItem="PQr-Ze-W5v" secondAttribute="top" constant="3" id="p8X-R8-cx9"/>
+                            <constraint firstItem="RMD-j0-5Eh" firstAttribute="leading" secondItem="PQr-Ze-W5v" secondAttribute="leading" id="tcD-Up-aE8"/>
+                            <constraint firstItem="RMD-j0-5Eh" firstAttribute="trailing" secondItem="PQr-Ze-W5v" secondAttribute="trailing" id="uNj-D3-LOV"/>
                             <constraint firstItem="WrC-Hr-fqu" firstAttribute="centerX" secondItem="tsR-hK-woN" secondAttribute="centerX" id="z5T-et-7Be"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="PQr-Ze-W5v"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Tasks" image="tasks" id="Lu9-m9-ddx"/>
+                    <tabBarItem key="tabBarItem" title="Tasks" image="tasks" id="d7w-Iz-fKm"/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="calendarHeightConstraint" destination="sWo-T7-3dZ" id="NAJ-Wb-irE"/>
                         <outlet property="calendarView" destination="WrC-Hr-fqu" id="2Bv-jR-b0E"/>
                         <outlet property="monthYearLabel" destination="1E7-3z-Kob" id="FLP-cp-hyw"/>
+                        <outlet property="todoTasksTableView" destination="RMD-j0-5Eh" id="y7S-3f-qIH"/>
                         <outlet property="weekMonthToggleButton" destination="map-Mn-TjT" id="FQA-Fc-JJ6"/>
                     </connections>
                 </viewController>
