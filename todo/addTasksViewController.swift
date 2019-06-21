@@ -12,30 +12,11 @@ import PMSuperButton
 
 class addTasksViewController: UIViewController {
 
-    @IBOutlet weak var startTimeOutlet: PMSuperButton!
-    @IBOutlet weak var endTimeOutlet: PMSuperButton!
+    @IBOutlet weak var startTimeOutlet: UIButton!
+    @IBOutlet weak var endTimeOutlet: UIButton!
     
     @IBAction func backToTabBarViewButton(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)
-    }
-    
-    @IBAction func startTimeButton(_ sender: Any) {
-        let mainStoryboard = UIStoryboard(name: "Main", bundle: Bundle.main)
-        if let vc = mainStoryboard.instantiateViewController(withIdentifier: "datePickerViewController") as? datePickerViewController {
-            vc.onSetDateTime = { (dateTime:String) -> () in
-                self.startTimeOutlet.setTitle(dateTime, for: .normal)
-            }
-            self.present(vc, animated: false, completion: nil)
-        }
-    }
-    @IBAction func endTimeButton(_ sender: Any) {
-        let mainStoryboard = UIStoryboard(name: "Main", bundle: Bundle.main)
-        if let vc = mainStoryboard.instantiateViewController(withIdentifier: "datePickerViewController") as? datePickerViewController {
-            vc.onSetDateTime = { (dateTime:String) -> () in
-                self.endTimeOutlet.setTitle(dateTime, for: .normal)
-            }
-            self.present(vc, animated: false, completion: nil)
-        }
     }
     
     @IBAction func addTodoButton(_ sender: Any) {
@@ -51,6 +32,21 @@ class addTasksViewController: UIViewController {
         let dateTime = " " + formatter.string(from: Date())
         self.startTimeOutlet.setTitle(dateTime, for: .normal)
         self.endTimeOutlet.setTitle(dateTime, for: .normal)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "startTimetoDatePickerViewControllerSegue" {
+            let popup = segue.destination as! datePickerViewController
+            popup.onSetDateTime = { [unowned self] (dateTime:String) -> () in
+                self.startTimeOutlet.setTitle(dateTime, for: .normal)
+            }
+        }
+        else if segue.identifier == "endTimetoDatePickerViewControllerSegue" {
+            let popup = segue.destination as! datePickerViewController
+            popup.onSetDateTime = { [unowned self] (dateTime:String) -> () in
+                self.endTimeOutlet.setTitle(dateTime, for: .normal)
+            }
+        }
     }
     
     

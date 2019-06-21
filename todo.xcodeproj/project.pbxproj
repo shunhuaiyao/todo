@@ -17,6 +17,10 @@
 		20BE859222AD60E900988390 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 20BE859022AD60E900988390 /* Main.storyboard */; };
 		20BE859422AD60EA00988390 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 20BE859322AD60EA00988390 /* Assets.xcassets */; };
 		20BE859722AD60EA00988390 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 20BE859522AD60EA00988390 /* LaunchScreen.storyboard */; };
+		20C2EB0122BCC6B9000CC95B /* datePickerViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 20C2EB0022BCC689000CC95B /* datePickerViewController.storyboard */; };
+		20C2EB0522BCD386000CC95B /* taskModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20C2EB0422BCD386000CC95B /* taskModel.swift */; };
+		20C2EB0722BCD399000CC95B /* taskFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20C2EB0622BCD399000CC95B /* taskFunctions.swift */; };
+		20C2EB0922BCDB7A000CC95B /* mockData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20C2EB0822BCDB7A000CC95B /* mockData.swift */; };
 		8E27A1F8A11EDA6ED106B8C2 /* Pods_todo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AFCDBF7A7DC6D756CD5CF26D /* Pods_todo.framework */; };
 /* End PBXBuildFile section */
 
@@ -33,6 +37,10 @@
 		20BE859322AD60EA00988390 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		20BE859622AD60EA00988390 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		20BE859822AD60EA00988390 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		20C2EB0022BCC689000CC95B /* datePickerViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = datePickerViewController.storyboard; path = /Users/yao/Desktop/todo/todo/datePickerViewController.storyboard; sourceTree = "<absolute>"; };
+		20C2EB0422BCD386000CC95B /* taskModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = taskModel.swift; sourceTree = "<group>"; };
+		20C2EB0622BCD399000CC95B /* taskFunctions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = taskFunctions.swift; sourceTree = "<group>"; };
+		20C2EB0822BCDB7A000CC95B /* mockData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = mockData.swift; sourceTree = "<group>"; };
 		7B879706601D73536524FFA1 /* Pods-todo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-todo.release.xcconfig"; path = "Target Support Files/Pods-todo/Pods-todo.release.xcconfig"; sourceTree = "<group>"; };
 		AFCDBF7A7DC6D756CD5CF26D /* Pods_todo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_todo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D08C404D78EE6319C4EEB859 /* Pods-todo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-todo.debug.xcconfig"; path = "Target Support Files/Pods-todo/Pods-todo.debug.xcconfig"; sourceTree = "<group>"; };
@@ -80,6 +88,7 @@
 		20BE858922AD60E900988390 /* todo */ = {
 			isa = PBXGroup;
 			children = (
+				20C2EB0222BCD339000CC95B /* Model */,
 				20BE858A22AD60E900988390 /* AppDelegate.swift */,
 				20BE858C22AD60E900988390 /* FirstViewController.swift */,
 				20BE858E22AD60E900988390 /* SecondViewController.swift */,
@@ -91,8 +100,27 @@
 				20A4BDCF22B13F1700833BD2 /* mainTabBarViewController.swift */,
 				20A4BDD122B143F200833BD2 /* addTasksViewController.swift */,
 				20A4BDD322B2889200833BD2 /* datePickerViewController.swift */,
+				20C2EB0022BCC689000CC95B /* datePickerViewController.storyboard */,
 			);
 			path = todo;
+			sourceTree = "<group>";
+		};
+		20C2EB0222BCD339000CC95B /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				20C2EB0822BCDB7A000CC95B /* mockData.swift */,
+				20C2EB0322BCD351000CC95B /* Task */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		20C2EB0322BCD351000CC95B /* Task */ = {
+			isa = PBXGroup;
+			children = (
+				20C2EB0422BCD386000CC95B /* taskModel.swift */,
+				20C2EB0622BCD399000CC95B /* taskFunctions.swift */,
+			);
+			path = Task;
 			sourceTree = "<group>";
 		};
 		7869DB6F510FCD467C70919D /* Frameworks */ = {
@@ -165,6 +193,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				20BE859722AD60EA00988390 /* LaunchScreen.storyboard in Resources */,
+				20C2EB0122BCC6B9000CC95B /* datePickerViewController.storyboard in Resources */,
 				20BE859422AD60EA00988390 /* Assets.xcassets in Resources */,
 				20BE859222AD60E900988390 /* Main.storyboard in Resources */,
 			);
@@ -223,9 +252,12 @@
 				20A4BDD222B143F200833BD2 /* addTasksViewController.swift in Sources */,
 				20BE858B22AD60E900988390 /* AppDelegate.swift in Sources */,
 				20A4BDD022B13F1700833BD2 /* mainTabBarViewController.swift in Sources */,
+				20C2EB0722BCD399000CC95B /* taskFunctions.swift in Sources */,
 				20A4BDD422B2889200833BD2 /* datePickerViewController.swift in Sources */,
 				20BE858D22AD60E900988390 /* FirstViewController.swift in Sources */,
+				20C2EB0522BCD386000CC95B /* taskModel.swift in Sources */,
 				20A4BDCE22AE449200833BD2 /* DateCell.swift in Sources */,
+				20C2EB0922BCDB7A000CC95B /* mockData.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

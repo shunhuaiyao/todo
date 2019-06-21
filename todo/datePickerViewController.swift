@@ -31,10 +31,10 @@ class datePickerViewController: UIViewController {
     @IBAction func setDateButton(_ sender: Any) {
 //        NotificationCenter.default.post(name: NSNotification.Name(rawValue: "setDateTime"), object: self)
         onSetDateTime?(formattedDateTime)
-        self.dismiss(animated: false, completion: nil)
+        self.dismiss(animated: true, completion: nil)
     }
     @IBAction func cancelDateButton(_ sender: Any) {
-        self.dismiss(animated: false, completion: nil)
+        self.dismiss(animated: true, completion: nil)
     }
     
 }
