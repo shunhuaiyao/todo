@@ -22,6 +22,7 @@
 		20C2EB0922BCDB7A000CC95B /* mockData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20C2EB0822BCDB7A000CC95B /* mockData.swift */; };
 		20C2EB1622BD1277000CC95B /* datePickerViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 20C2EB1522BD1277000CC95B /* datePickerViewController.storyboard */; };
 		20C2EB1822BD12C9000CC95B /* tasksViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 20C2EB1722BD12C9000CC95B /* tasksViewController.storyboard */; };
+		20C2EB1A22BD319C000CC95B /* tasksTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20C2EB1922BD319C000CC95B /* tasksTableViewCell.swift */; };
 		8E27A1F8A11EDA6ED106B8C2 /* Pods_todo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AFCDBF7A7DC6D756CD5CF26D /* Pods_todo.framework */; };
 /* End PBXBuildFile section */
 
@@ -43,6 +44,7 @@
 		20C2EB0822BCDB7A000CC95B /* mockData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = mockData.swift; sourceTree = "<group>"; };
 		20C2EB1522BD1277000CC95B /* datePickerViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = datePickerViewController.storyboard; sourceTree = "<group>"; };
 		20C2EB1722BD12C9000CC95B /* tasksViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = tasksViewController.storyboard; sourceTree = "<group>"; };
+		20C2EB1922BD319C000CC95B /* tasksTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = tasksTableViewCell.swift; sourceTree = "<group>"; };
 		7B879706601D73536524FFA1 /* Pods-todo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-todo.release.xcconfig"; path = "Target Support Files/Pods-todo/Pods-todo.release.xcconfig"; sourceTree = "<group>"; };
 		AFCDBF7A7DC6D756CD5CF26D /* Pods_todo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_todo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D08C404D78EE6319C4EEB859 /* Pods-todo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-todo.debug.xcconfig"; path = "Target Support Files/Pods-todo/Pods-todo.debug.xcconfig"; sourceTree = "<group>"; };
@@ -90,9 +92,8 @@
 		20BE858922AD60E900988390 /* todo */ = {
 			isa = PBXGroup;
 			children = (
-				20C2EB1422BD1252000CC95B /* tasksViewController */,
-				20C2EB1122BD0B0B000CC95B /* datePickerViewController */,
 				20C2EB0222BCD339000CC95B /* Model */,
+				20C2EB1B22BD31C6000CC95B /* Views */,
 				20BE858A22AD60E900988390 /* AppDelegate.swift */,
 				20BE858E22AD60E900988390 /* SecondViewController.swift */,
 				20BE859022AD60E900988390 /* Main.storyboard */,
@@ -138,8 +139,18 @@
 			children = (
 				20C2EB1722BD12C9000CC95B /* tasksViewController.storyboard */,
 				20BE858C22AD60E900988390 /* FirstViewController.swift */,
+				20C2EB1922BD319C000CC95B /* tasksTableViewCell.swift */,
 			);
 			path = tasksViewController;
+			sourceTree = "<group>";
+		};
+		20C2EB1B22BD31C6000CC95B /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				20C2EB1422BD1252000CC95B /* tasksViewController */,
+				20C2EB1122BD0B0B000CC95B /* datePickerViewController */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 		7869DB6F510FCD467C70919D /* Frameworks */ = {
@@ -268,6 +279,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				20C2EB1A22BD319C000CC95B /* tasksTableViewCell.swift in Sources */,
 				20BE858F22AD60E900988390 /* SecondViewController.swift in Sources */,
 				20A4BDD222B143F200833BD2 /* addTasksViewController.swift in Sources */,
 				20BE858B22AD60E900988390 /* AppDelegate.swift in Sources */,

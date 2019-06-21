@@ -138,6 +138,41 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="RMD-j0-5Eh">
                                 <rect key="frame" x="0.0" y="249" width="320" height="270"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" rowHeight="120" id="kPb-oX-iXa" customClass="tasksTableViewCell" customModule="todo" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="320" height="120"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="kPb-oX-iXa" id="4IJ-oN-BpA">
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="119.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IqF-Mj-p2A">
+                                                    <rect key="frame" x="15" y="11" width="290" height="98"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hDa-Mm-eUo">
+                                                            <rect key="frame" x="44" y="8" width="238" height="35"/>
+                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="28"/>
+                                                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                    <color key="backgroundColor" red="1" green="0.63456710531143623" blue="0.25160239567231357" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                </view>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="IqF-Mj-p2A" firstAttribute="leading" secondItem="4IJ-oN-BpA" secondAttribute="leadingMargin" id="DQU-ss-5Ts"/>
+                                                <constraint firstItem="IqF-Mj-p2A" firstAttribute="bottom" secondItem="4IJ-oN-BpA" secondAttribute="bottomMargin" id="vfq-1I-Cue"/>
+                                                <constraint firstItem="IqF-Mj-p2A" firstAttribute="trailing" secondItem="4IJ-oN-BpA" secondAttribute="trailingMargin" id="w6W-XB-M5q"/>
+                                                <constraint firstItem="IqF-Mj-p2A" firstAttribute="top" secondItem="4IJ-oN-BpA" secondAttribute="topMargin" id="zl3-Ff-Bk2"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="taskTitleLabel" destination="hDa-Mm-eUo" id="ko0-Qg-53U"/>
+                                            <outlet property="taskView" destination="IqF-Mj-p2A" id="t8y-uk-kNi"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

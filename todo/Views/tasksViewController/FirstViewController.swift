@@ -21,7 +21,8 @@ class FirstViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        todoTasksTableView.dataSource = self
+        self.todoTasksTableView.dataSource = self
+        self.todoTasksTableView.delegate = self
         taskFunctions.readTasks(completion: { [unowned self] in
             self.todoTasksTableView.reloadData()
         })
@@ -146,17 +147,16 @@ extension FirstViewController: JTAppleCalendarViewDelegate {
     }
 }
 
-extension FirstViewController: UITabBarDelegate, UITableViewDataSource {
+extension FirstViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return Data.taskModels.count
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        var cell = tableView.dequeueReusableCell(withIdentifier: "cell")
-        
-        if cell == nil {
-           cell = UITableViewCell(style: UITableViewCell.CellStyle.default, reuseIdentifier: "cell")
-        }
-        cell!.textLabel?.text = Data.taskModels[indexPath.row].title
-        return cell!
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cell") as! tasksTableViewCell
+        cell.setupCell(taskModel: Data.taskModels[indexPath.row])
+        return cell
+    }
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 120
     }
 }
