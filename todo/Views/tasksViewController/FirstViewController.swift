@@ -21,6 +21,7 @@ class FirstViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        self.monthYearLabel.font = UIFont(name: Theme.mainFontName, size: 17)
         self.todoTasksTableView.dataSource = self
         self.todoTasksTableView.delegate = self
         taskFunctions.readTasks(completion: { [unowned self] in
@@ -32,6 +33,7 @@ class FirstViewController: UIViewController {
     func configureCell(view: JTAppleCell?, cellState: CellState) {
         guard let cell = view as? DateCell  else { return }
         cell.dateLabel.text = cellState.text
+        cell.dateLabel.font = UIFont(name: Theme.mainFontName, size: 17)
         handleCellTextColor(cell: cell, cellState: cellState)
         handleCellSelected(cell: cell, cellState: cellState)
         handleMonthYearState(cell: cell, cellState: cellState)

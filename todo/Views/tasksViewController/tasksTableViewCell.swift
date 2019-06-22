@@ -19,6 +19,7 @@ class tasksTableViewCell: UITableViewCell {
         self.taskView.layer.shadowOffset = CGSize.zero
         self.taskView.layer.shadowColor = UIColor.darkGray.cgColor
         self.taskView.layer.cornerRadius = 10
+        self.taskView.backgroundColor = Theme.accentColor
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
