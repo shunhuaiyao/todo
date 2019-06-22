@@ -79,7 +79,7 @@
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tKE-Wz-hhu">
                                 <rect key="frame" x="16" y="179" width="289" height="43"/>
-                                <color key="backgroundColor" cocoaTouchSystemColor="lightTextColor"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="289" id="6wx-y8-PPa"/>
                                     <constraint firstAttribute="height" constant="43" id="UdS-F3-VNf"/>
@@ -138,11 +138,11 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="upY-bB-6Vc">
-                                <rect key="frame" x="17" y="345" width="109" height="31"/>
+                                <rect key="frame" x="17" y="345" width="109" height="30"/>
                                 <color key="backgroundColor" cocoaTouchSystemColor="lightTextColor"/>
                                 <constraints>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="109" id="5Tq-H0-aFc"/>
-                                    <constraint firstAttribute="height" constant="31" id="aoS-g9-1p6"/>
+                                    <constraint firstAttribute="height" constant="30" id="aoS-g9-1p6"/>
                                 </constraints>
                                 <color key="tintColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <state key="normal" title="Add a subtask">
@@ -221,12 +221,15 @@
                             <constraint firstItem="flc-u3-OVS" firstAttribute="top" secondItem="UeW-mW-5sh" secondAttribute="bottom" constant="8" id="rof-M5-jtF"/>
                             <constraint firstItem="7Hs-Op-ywv" firstAttribute="leading" secondItem="etb-8z-iS1" secondAttribute="leading" constant="17" id="tfk-18-NS2"/>
                             <constraint firstItem="tKE-Wz-hhu" firstAttribute="leading" secondItem="etb-8z-iS1" secondAttribute="leading" constant="16" id="u6V-c9-VFU"/>
-                            <constraint firstItem="7Hs-Op-ywv" firstAttribute="top" secondItem="upY-bB-6Vc" secondAttribute="bottom" constant="8" id="wfE-WG-Cdy"/>
+                            <constraint firstItem="7Hs-Op-ywv" firstAttribute="top" secondItem="upY-bB-6Vc" secondAttribute="bottom" constant="9" id="wfE-WG-Cdy"/>
                             <constraint firstItem="etb-8z-iS1" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="tBh-SG-8fp" secondAttribute="trailing" symbolic="YES" id="yAj-Do-FnU"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="etb-8z-iS1"/>
                     </view>
                     <connections>
+                        <outlet property="addNoteOutlet" destination="MS6-em-KHQ" id="8Dj-Qn-vYt"/>
+                        <outlet property="addSubtaskOutlet" destination="upY-bB-6Vc" id="ae3-C1-O9C"/>
+                        <outlet property="addTagOutlet" destination="oHE-HL-nRG" id="Cdy-TU-a4n"/>
                         <outlet property="endTimeOutlet" destination="UeW-mW-5sh" id="dVi-Np-K7N"/>
                         <outlet property="startTimeOutlet" destination="tKE-Wz-hhu" id="7Bd-Xi-bEt"/>
                     </connections>

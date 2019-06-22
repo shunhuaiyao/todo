@@ -12,8 +12,11 @@ import PMSuperButton
 
 class addTasksViewController: UIViewController {
 
+    @IBOutlet weak var addTagOutlet: UIButton!
     @IBOutlet weak var startTimeOutlet: UIButton!
     @IBOutlet weak var endTimeOutlet: UIButton!
+    @IBOutlet weak var addSubtaskOutlet: UIButton!
+    @IBOutlet weak var addNoteOutlet: UIButton!
     
     @IBAction func backToTabBarViewButton(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)
@@ -32,6 +35,14 @@ class addTasksViewController: UIViewController {
         let dateTime = " " + formatter.string(from: Date())
         self.startTimeOutlet.setTitle(dateTime, for: .normal)
         self.endTimeOutlet.setTitle(dateTime, for: .normal)
+        
+        self.startTimeOutlet.createShadowandBorder()
+        self.endTimeOutlet.createShadowandBorder()
+        self.addTagOutlet.createDashedBorder(cornerRadius: self.addTagOutlet.frame.height / 2)
+        self.addSubtaskOutlet.createDashedBorder(cornerRadius: self.addSubtaskOutlet.frame.height / 2)
+        self.addNoteOutlet.createDashedBorder(cornerRadius: 5)
+        
+        
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
