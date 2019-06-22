@@ -40,7 +40,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Nw-L8-lE0" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="750" y="364"/>
+            <point key="canvasLocation" x="750" y="336"/>
         </scene>
         <!--Add Tasks View Controller-->
         <scene sceneID="Kbp-km-Zu2">
@@ -232,11 +232,12 @@
                         <outlet property="addTagOutlet" destination="oHE-HL-nRG" id="Cdy-TU-a4n"/>
                         <outlet property="endTimeOutlet" destination="UeW-mW-5sh" id="dVi-Np-K7N"/>
                         <outlet property="startTimeOutlet" destination="tKE-Wz-hhu" id="7Bd-Xi-bEt"/>
+                        <outlet property="taskTitleOutlet" destination="tbD-yL-WPY" id="41g-c5-GmK"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qyE-Nl-oim" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1601.25" y="362.32394366197184"/>
+            <point key="canvasLocation" x="1583" y="362"/>
         </scene>
         <!--Main Tab Bar View Controller-->
         <scene sceneID="yl2-sM-qoP">
@@ -251,6 +252,7 @@
                         <segue destination="cHb-iQ-t0O" kind="relationship" relationship="viewControllers" id="suz-WY-M9L"/>
                         <segue destination="8rJ-Kc-sve" kind="relationship" relationship="viewControllers" id="p0g-qQ-fmH"/>
                         <segue destination="s6U-u1-dol" kind="relationship" relationship="viewControllers" id="IWl-XI-XYb"/>
+                        <segue destination="GUg-m3-2Ze" kind="presentation" identifier="toAddTasksViewController" modalPresentationStyle="overCurrentContext" modalTransitionStyle="coverVertical" id="A1R-3m-uqn"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HuB-VB-40B" sceneMemberID="firstResponder"/>
@@ -268,7 +270,7 @@
         <!--tasksViewController-->
         <scene sceneID="odZ-Vp-x2a">
             <objects>
-                <viewControllerPlaceholder storyboardName="tasksViewController" id="cHb-iQ-t0O" sceneMemberID="viewController">
+                <viewControllerPlaceholder storyboardIdentifier="tasksViewController" storyboardName="tasksViewController" id="cHb-iQ-t0O" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Item" id="Qxg-jI-Lvp"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zrn-1k-zEg" userLabel="First Responder" sceneMemberID="firstResponder"/>

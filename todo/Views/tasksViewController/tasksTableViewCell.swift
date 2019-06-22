@@ -12,6 +12,7 @@ class tasksTableViewCell: UITableViewCell {
 
     @IBOutlet weak var taskView: UIView!
     @IBOutlet weak var taskTitleLabel: UILabel!
+    @IBOutlet weak var timeLabel: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

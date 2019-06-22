@@ -12,17 +12,25 @@ import PMSuperButton
 
 class addTasksViewController: UIViewController {
 
+    @IBOutlet weak var taskTitleOutlet: UITextField!
     @IBOutlet weak var addTagOutlet: UIButton!
     @IBOutlet weak var startTimeOutlet: UIButton!
     @IBOutlet weak var endTimeOutlet: UIButton!
     @IBOutlet weak var addSubtaskOutlet: UIButton!
     @IBOutlet weak var addNoteOutlet: UIButton!
     
+    var doneAddingTask: (() -> ())?
+    
     @IBAction func backToTabBarViewButton(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)
     }
     
     @IBAction func addTodoButton(_ sender: Any) {
+        taskFunctions.createTask(taskModel: taskModel(title: taskTitleOutlet.text!))
+        if let doneAddingTask = doneAddingTask {
+            doneAddingTask()
+        }
+        
         self.dismiss(animated: true, completion: nil)
     }
     
@@ -60,5 +68,8 @@ class addTasksViewController: UIViewController {
         }
     }
     
+    deinit {
+        print("addTasksViewController deinit")
+    }
     
 }

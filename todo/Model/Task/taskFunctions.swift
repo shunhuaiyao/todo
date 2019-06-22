@@ -10,7 +10,7 @@ import Foundation
 
 class taskFunctions {
     static func createTask(taskModel: taskModel) {
-        
+        Data.taskModels.append(taskModel)
     }
     
     static func readTasks(completion: @escaping () -> ()) {

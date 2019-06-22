@@ -109,6 +109,9 @@ class FirstViewController: UIViewController {
         })
     }
     
+    deinit {
+        print("firstviewcontroller deinit")
+    }
 }
 
 extension FirstViewController: JTAppleCalendarViewDataSource {

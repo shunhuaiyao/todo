@@ -36,5 +36,7 @@ class datePickerViewController: UIViewController {
     @IBAction func cancelDateButton(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)
     }
-    
+    deinit {
+        print("datePicker deinit")
+    }
 }
