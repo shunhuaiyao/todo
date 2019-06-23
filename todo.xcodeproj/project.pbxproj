@@ -21,7 +21,6 @@
 		20C2EB0722BCD399000CC95B /* taskFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20C2EB0622BCD399000CC95B /* taskFunctions.swift */; };
 		20C2EB0922BCDB7A000CC95B /* mockData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20C2EB0822BCDB7A000CC95B /* mockData.swift */; };
 		20C2EB1622BD1277000CC95B /* datePickerViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 20C2EB1522BD1277000CC95B /* datePickerViewController.storyboard */; };
-		20C2EB1822BD12C9000CC95B /* tasksViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 20C2EB1722BD12C9000CC95B /* tasksViewController.storyboard */; };
 		20C2EB1A22BD319C000CC95B /* tasksTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20C2EB1922BD319C000CC95B /* tasksTableViewCell.swift */; };
 		20C2EB1E22BDC8EC000CC95B /* Hannotate.ttc in Resources */ = {isa = PBXBuildFile; fileRef = 20C2EB1D22BDC8EC000CC95B /* Hannotate.ttc */; };
 		20C2EB2022BDC936000CC95B /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20C2EB1F22BDC936000CC95B /* Theme.swift */; };
@@ -47,7 +46,6 @@
 		20C2EB0622BCD399000CC95B /* taskFunctions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = taskFunctions.swift; sourceTree = "<group>"; };
 		20C2EB0822BCDB7A000CC95B /* mockData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = mockData.swift; sourceTree = "<group>"; };
 		20C2EB1522BD1277000CC95B /* datePickerViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = datePickerViewController.storyboard; sourceTree = "<group>"; };
-		20C2EB1722BD12C9000CC95B /* tasksViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = tasksViewController.storyboard; sourceTree = "<group>"; };
 		20C2EB1922BD319C000CC95B /* tasksTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = tasksTableViewCell.swift; sourceTree = "<group>"; };
 		20C2EB1D22BDC8EC000CC95B /* Hannotate.ttc */ = {isa = PBXFileReference; lastKnownFileType = file; path = Hannotate.ttc; sourceTree = "<group>"; };
 		20C2EB1F22BDC936000CC95B /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
@@ -147,7 +145,6 @@
 		20C2EB1422BD1252000CC95B /* tasksViewController */ = {
 			isa = PBXGroup;
 			children = (
-				20C2EB1722BD12C9000CC95B /* tasksViewController.storyboard */,
 				20BE858C22AD60E900988390 /* FirstViewController.swift */,
 				20C2EB1922BD319C000CC95B /* tasksTableViewCell.swift */,
 			);
@@ -250,7 +247,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				20C2EB1822BD12C9000CC95B /* tasksViewController.storyboard in Resources */,
 				20BE859722AD60EA00988390 /* LaunchScreen.storyboard in Resources */,
 				20C2EB1E22BDC8EC000CC95B /* Hannotate.ttc in Resources */,
 				20C2EB1622BD1277000CC95B /* datePickerViewController.storyboard in Resources */,

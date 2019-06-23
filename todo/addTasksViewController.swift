@@ -12,6 +12,7 @@ import PMSuperButton
 
 class addTasksViewController: UIViewController {
 
+    @IBOutlet weak var addTodoOutlet: UIButton!
     @IBOutlet weak var taskTitleOutlet: UITextField!
     @IBOutlet weak var addTagOutlet: UIButton!
     @IBOutlet weak var startTimeOutlet: UIButton!
@@ -20,17 +21,22 @@ class addTasksViewController: UIViewController {
     @IBOutlet weak var addNoteOutlet: UIButton!
     
     var doneAddingTask: (() -> ())?
+    var taskIndexToEdit: Int?
     
     @IBAction func backToTabBarViewButton(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)
     }
     
     @IBAction func addTodoButton(_ sender: Any) {
-        taskFunctions.createTask(taskModel: taskModel(title: taskTitleOutlet.text!))
+        
+        if let index = taskIndexToEdit {
+            taskFunctions.updateTask(at: index, title: self.taskTitleOutlet.text ?? Data.taskModels[index].title)
+        } else {
+            taskFunctions.createTask(taskModel: taskModel(title: taskTitleOutlet.text!))
+        }
         if let doneAddingTask = doneAddingTask {
             doneAddingTask()
         }
-        
         self.dismiss(animated: true, completion: nil)
     }
     
@@ -40,7 +46,7 @@ class addTasksViewController: UIViewController {
         let formatter = DateFormatter()
         formatter.dateStyle = .medium
         formatter.timeStyle = .short
-        let dateTime = " " + formatter.string(from: Date())
+        var dateTime = " " + formatter.string(from: Date())
         self.startTimeOutlet.setTitle(dateTime, for: .normal)
         self.endTimeOutlet.setTitle(dateTime, for: .normal)
         
@@ -50,6 +56,15 @@ class addTasksViewController: UIViewController {
         self.addSubtaskOutlet.createDashedBorder(cornerRadius: self.addSubtaskOutlet.frame.height / 2)
         self.addNoteOutlet.createDashedBorder(cornerRadius: 5)
         
+        if let index = taskIndexToEdit {
+            self.addTodoOutlet.setTitle("Save", for: .normal)
+            let task = Data.taskModels[index]
+            self.taskTitleOutlet.text = task.title
+            dateTime = " " + formatter.string(from: task.startTime ?? Date())
+            self.startTimeOutlet.setTitle(dateTime, for: .normal)
+            dateTime = " " + formatter.string(from: task.endTime ?? Date())
+            self.endTimeOutlet.setTitle(dateTime, for: .normal)
+        }
         
     }
     

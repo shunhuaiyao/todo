@@ -26,11 +26,13 @@ class taskFunctions {
         }
     }
     
-    static func updateTask(taskModel: taskModel) {
-        
+    static func updateTask(at index: Int, title: String) {
+        Data.taskModels[index].title = title
+//        Data.taskModels[index].startTime = startTime
+//        Data.taskModels[index].endTime = endTime
     }
     
-    static func deleteTask(taskModel: taskModel) {
-        
+    static func deleteTask(index: Int) {
+        Data.taskModels.remove(at: index)
     }
 }

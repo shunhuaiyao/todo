@@ -18,6 +18,8 @@ class FirstViewController: UIViewController {
     @IBOutlet weak var calendarHeightConstraint: NSLayoutConstraint!
     @IBOutlet weak var weekMonthToggleButton: UIButton!
     @IBOutlet weak var todoTasksTableView: UITableView!
+    var taskIndexToEdit: Int?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -109,8 +111,14 @@ class FirstViewController: UIViewController {
         })
     }
     
-    deinit {
-        print("firstviewcontroller deinit")
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "toAddTasksViewController" {
+            let popup = segue.destination as! addTasksViewController
+            popup.taskIndexToEdit = self.taskIndexToEdit
+            popup.doneAddingTask = { [unowned self] in
+                self.todoTasksTableView.reloadData()
+            }
+        }
     }
 }
 
@@ -163,5 +171,17 @@ extension FirstViewController: UITableViewDelegate, UITableViewDataSource {
     }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 120
+    }
+    func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        let delete = UIContextualAction(style: .destructive, title: "Delete") { (contextualAction, view, actionPerformed: (Bool) -> ()) in
+            taskFunctions.deleteTask(index: indexPath.row)
+            tableView.deleteRows(at: [indexPath], with: .left)
+            actionPerformed(true)
+        }
+        return UISwipeActionsConfiguration(actions: [delete])
+    }
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        self.taskIndexToEdit = indexPath.row
+        self.performSegue(withIdentifier: "toAddTasksViewController", sender: nil)
     }
 }
