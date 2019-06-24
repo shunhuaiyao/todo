@@ -18,14 +18,17 @@
 		20BE859422AD60EA00988390 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 20BE859322AD60EA00988390 /* Assets.xcassets */; };
 		20BE859722AD60EA00988390 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 20BE859522AD60EA00988390 /* LaunchScreen.storyboard */; };
 		20C2EB0522BCD386000CC95B /* taskModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20C2EB0422BCD386000CC95B /* taskModel.swift */; };
-		20C2EB0722BCD399000CC95B /* taskFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20C2EB0622BCD399000CC95B /* taskFunctions.swift */; };
-		20C2EB0922BCDB7A000CC95B /* mockData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20C2EB0822BCDB7A000CC95B /* mockData.swift */; };
+		20C2EB0722BCD399000CC95B /* dayFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20C2EB0622BCD399000CC95B /* dayFunctions.swift */; };
+		20C2EB0922BCDB7A000CC95B /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20C2EB0822BCDB7A000CC95B /* Data.swift */; };
 		20C2EB1622BD1277000CC95B /* datePickerViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 20C2EB1522BD1277000CC95B /* datePickerViewController.storyboard */; };
 		20C2EB1A22BD319C000CC95B /* tasksTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20C2EB1922BD319C000CC95B /* tasksTableViewCell.swift */; };
 		20C2EB1E22BDC8EC000CC95B /* Hannotate.ttc in Resources */ = {isa = PBXBuildFile; fileRef = 20C2EB1D22BDC8EC000CC95B /* Hannotate.ttc */; };
 		20C2EB2022BDC936000CC95B /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20C2EB1F22BDC936000CC95B /* Theme.swift */; };
 		20C2EB2222BDCEAB000CC95B /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 20C2EB2122BDCEAB000CC95B /* Colors.xcassets */; };
 		20C2EB2522BDD8CD000CC95B /* UIButtonExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20C2EB2422BDD8CD000CC95B /* UIButtonExtensions.swift */; };
+		20C2EB2922C0AEDA000CC95B /* dayModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20C2EB2822C0AEDA000CC95B /* dayModel.swift */; };
+		20C2EB2B22C0B78F000CC95B /* subtaskModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20C2EB2A22C0B78F000CC95B /* subtaskModel.swift */; };
+		20C2EB2D22C0BB48000CC95B /* mockData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20C2EB2C22C0BB48000CC95B /* mockData.swift */; };
 		8E27A1F8A11EDA6ED106B8C2 /* Pods_todo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AFCDBF7A7DC6D756CD5CF26D /* Pods_todo.framework */; };
 /* End PBXBuildFile section */
 
@@ -43,14 +46,17 @@
 		20BE859622AD60EA00988390 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		20BE859822AD60EA00988390 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		20C2EB0422BCD386000CC95B /* taskModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = taskModel.swift; sourceTree = "<group>"; };
-		20C2EB0622BCD399000CC95B /* taskFunctions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = taskFunctions.swift; sourceTree = "<group>"; };
-		20C2EB0822BCDB7A000CC95B /* mockData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = mockData.swift; sourceTree = "<group>"; };
+		20C2EB0622BCD399000CC95B /* dayFunctions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = dayFunctions.swift; sourceTree = "<group>"; };
+		20C2EB0822BCDB7A000CC95B /* Data.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Data.swift; sourceTree = "<group>"; };
 		20C2EB1522BD1277000CC95B /* datePickerViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = datePickerViewController.storyboard; sourceTree = "<group>"; };
 		20C2EB1922BD319C000CC95B /* tasksTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = tasksTableViewCell.swift; sourceTree = "<group>"; };
 		20C2EB1D22BDC8EC000CC95B /* Hannotate.ttc */ = {isa = PBXFileReference; lastKnownFileType = file; path = Hannotate.ttc; sourceTree = "<group>"; };
 		20C2EB1F22BDC936000CC95B /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
 		20C2EB2122BDCEAB000CC95B /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
 		20C2EB2422BDD8CD000CC95B /* UIButtonExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIButtonExtensions.swift; sourceTree = "<group>"; };
+		20C2EB2822C0AEDA000CC95B /* dayModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = dayModel.swift; sourceTree = "<group>"; };
+		20C2EB2A22C0B78F000CC95B /* subtaskModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = subtaskModel.swift; sourceTree = "<group>"; };
+		20C2EB2C22C0BB48000CC95B /* mockData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = mockData.swift; sourceTree = "<group>"; };
 		7B879706601D73536524FFA1 /* Pods-todo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-todo.release.xcconfig"; path = "Target Support Files/Pods-todo/Pods-todo.release.xcconfig"; sourceTree = "<group>"; };
 		AFCDBF7A7DC6D756CD5CF26D /* Pods_todo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_todo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D08C404D78EE6319C4EEB859 /* Pods-todo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-todo.debug.xcconfig"; path = "Target Support Files/Pods-todo/Pods-todo.debug.xcconfig"; sourceTree = "<group>"; };
@@ -118,8 +124,11 @@
 		20C2EB0222BCD339000CC95B /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				20C2EB0822BCDB7A000CC95B /* mockData.swift */,
+				20C2EB0822BCDB7A000CC95B /* Data.swift */,
+				20C2EB2C22C0BB48000CC95B /* mockData.swift */,
+				20C2EB2622C0AE51000CC95B /* Day */,
 				20C2EB0322BCD351000CC95B /* Task */,
+				20C2EB2722C0AE6C000CC95B /* Subtask */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -128,7 +137,6 @@
 			isa = PBXGroup;
 			children = (
 				20C2EB0422BCD386000CC95B /* taskModel.swift */,
-				20C2EB0622BCD399000CC95B /* taskFunctions.swift */,
 			);
 			path = Task;
 			sourceTree = "<group>";
@@ -176,6 +184,23 @@
 				20C2EB2422BDD8CD000CC95B /* UIButtonExtensions.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		20C2EB2622C0AE51000CC95B /* Day */ = {
+			isa = PBXGroup;
+			children = (
+				20C2EB2822C0AEDA000CC95B /* dayModel.swift */,
+				20C2EB0622BCD399000CC95B /* dayFunctions.swift */,
+			);
+			path = Day;
+			sourceTree = "<group>";
+		};
+		20C2EB2722C0AE6C000CC95B /* Subtask */ = {
+			isa = PBXGroup;
+			children = (
+				20C2EB2A22C0B78F000CC95B /* subtaskModel.swift */,
+			);
+			path = Subtask;
 			sourceTree = "<group>";
 		};
 		7869DB6F510FCD467C70919D /* Frameworks */ = {
@@ -310,14 +335,17 @@
 				20A4BDD222B143F200833BD2 /* addTasksViewController.swift in Sources */,
 				20BE858B22AD60E900988390 /* AppDelegate.swift in Sources */,
 				20A4BDD022B13F1700833BD2 /* mainTabBarViewController.swift in Sources */,
-				20C2EB0722BCD399000CC95B /* taskFunctions.swift in Sources */,
+				20C2EB0722BCD399000CC95B /* dayFunctions.swift in Sources */,
 				20A4BDD422B2889200833BD2 /* datePickerViewController.swift in Sources */,
 				20C2EB2522BDD8CD000CC95B /* UIButtonExtensions.swift in Sources */,
 				20BE858D22AD60E900988390 /* FirstViewController.swift in Sources */,
 				20C2EB0522BCD386000CC95B /* taskModel.swift in Sources */,
+				20C2EB2922C0AEDA000CC95B /* dayModel.swift in Sources */,
+				20C2EB2B22C0B78F000CC95B /* subtaskModel.swift in Sources */,
 				20C2EB2022BDC936000CC95B /* Theme.swift in Sources */,
+				20C2EB2D22C0BB48000CC95B /* mockData.swift in Sources */,
 				20A4BDCE22AE449200833BD2 /* DateCell.swift in Sources */,
-				20C2EB0922BCDB7A000CC95B /* mockData.swift in Sources */,
+				20C2EB0922BCDB7A000CC95B /* Data.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

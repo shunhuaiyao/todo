@@ -18,7 +18,7 @@ class FirstViewController: UIViewController {
     @IBOutlet weak var calendarHeightConstraint: NSLayoutConstraint!
     @IBOutlet weak var weekMonthToggleButton: UIButton!
     @IBOutlet weak var todoTasksTableView: UITableView!
-    var taskIndexToEdit: Int?
+    var taskIndexPathToEdit: IndexPath?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,7 +26,7 @@ class FirstViewController: UIViewController {
         self.monthYearLabel.font = UIFont(name: Theme.mainFontName, size: 17)
         self.todoTasksTableView.dataSource = self
         self.todoTasksTableView.delegate = self
-        taskFunctions.readTasks(completion: { [unowned self] in
+        dayFunctions.readDays(completion: { [unowned self] in
             self.todoTasksTableView.reloadData()
         })
     }
@@ -114,7 +114,7 @@ class FirstViewController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "toAddTasksViewController" {
             let popup = segue.destination as! addTasksViewController
-            popup.taskIndexToEdit = self.taskIndexToEdit
+            popup.taskIndexPathToEdit = self.taskIndexPathToEdit
             popup.doneAddingTask = { [unowned self] in
                 self.todoTasksTableView.reloadData()
             }
@@ -161,12 +161,18 @@ extension FirstViewController: JTAppleCalendarViewDelegate {
 }
 
 extension FirstViewController: UITableViewDelegate, UITableViewDataSource {
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return Data.dayModels.count
+    }
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        return Data.dayModels[section].dateString
+    }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return Data.taskModels.count
+        return Data.dayModels[section].taskModels.count
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell") as! tasksTableViewCell
-        cell.setupCell(taskModel: Data.taskModels[indexPath.row])
+        cell.setupCell(taskModel: Data.dayModels[indexPath.section].taskModels[indexPath.row])
         return cell
     }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -174,14 +180,14 @@ extension FirstViewController: UITableViewDelegate, UITableViewDataSource {
     }
     func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
         let delete = UIContextualAction(style: .destructive, title: "Delete") { (contextualAction, view, actionPerformed: (Bool) -> ()) in
-            taskFunctions.deleteTask(index: indexPath.row)
+            dayFunctions.deleteTaskInExistedDay(indexPath: indexPath)
             tableView.deleteRows(at: [indexPath], with: .left)
             actionPerformed(true)
         }
         return UISwipeActionsConfiguration(actions: [delete])
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        self.taskIndexToEdit = indexPath.row
+        self.taskIndexPathToEdit = indexPath
         self.performSegue(withIdentifier: "toAddTasksViewController", sender: nil)
     }
 }

@@ -21,7 +21,7 @@ class addTasksViewController: UIViewController {
     @IBOutlet weak var addNoteOutlet: UIButton!
     
     var doneAddingTask: (() -> ())?
-    var taskIndexToEdit: Int?
+    var taskIndexPathToEdit: IndexPath?
     
     @IBAction func backToTabBarViewButton(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)
@@ -29,10 +29,18 @@ class addTasksViewController: UIViewController {
     
     @IBAction func addTodoButton(_ sender: Any) {
         
-        if let index = taskIndexToEdit {
-            taskFunctions.updateTask(at: index, title: self.taskTitleOutlet.text ?? Data.taskModels[index].title)
+        if let indexPath = taskIndexPathToEdit {
+//            taskFunctions.updateTask(at: index, title: self.taskTitleOutlet.text ?? Data.taskModels[index].title)
+            dayFunctions.updateDay(at: indexPath, title: self.taskTitleOutlet.text ?? Data.dayModels[indexPath.section].taskModels[indexPath.row].title)
+            
         } else {
-            taskFunctions.createTask(taskModel: taskModel(title: taskTitleOutlet.text!))
+            if let dayIndex = dayAlreadyExists(Date()) {
+                dayFunctions.createTaskInExistedDay(at: dayIndex, taskModel: taskModel(title: taskTitleOutlet.text!))
+            } else {
+                var taskModels = [taskModel]()
+                taskModels.append(taskModel(title: taskTitleOutlet.text!))
+                dayFunctions.createDay(dayModel: dayModel(date: Date(), taskModels: taskModels))
+            }
         }
         if let doneAddingTask = doneAddingTask {
             doneAddingTask()
@@ -56,9 +64,9 @@ class addTasksViewController: UIViewController {
         self.addSubtaskOutlet.createDashedBorder(cornerRadius: self.addSubtaskOutlet.frame.height / 2)
         self.addNoteOutlet.createDashedBorder(cornerRadius: 5)
         
-        if let index = taskIndexToEdit {
+        if let indexPath = taskIndexPathToEdit {
             self.addTodoOutlet.setTitle("Save", for: .normal)
-            let task = Data.taskModels[index]
+            let task = Data.dayModels[indexPath.section].taskModels[indexPath.row]
             self.taskTitleOutlet.text = task.title
             dateTime = " " + formatter.string(from: task.startTime ?? Date())
             self.startTimeOutlet.setTitle(dateTime, for: .normal)
@@ -87,4 +95,16 @@ class addTasksViewController: UIViewController {
         print("addTasksViewController deinit")
     }
     
+    func dayAlreadyExists(_ date: Date) -> Int? {
+        let formatter = DateFormatter()
+        formatter.dateFormat = " MMMM dd"
+        let dateString = formatter.string(from: date)
+        
+        for (index, dayModel) in Data.dayModels.enumerated() {
+            if dayModel.dateString == dateString {
+                return index
+            }
+        }
+        return nil
+    }
 }
