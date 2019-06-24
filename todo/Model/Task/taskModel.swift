@@ -16,7 +16,6 @@ struct taskModel{
     var endTime: Date?
     var subtaskModels = [subtaskModel]()
     
-    
     init(title: String, subtaskModels: [subtaskModel]? = nil) {
         self.id = UUID()
         self.title = title

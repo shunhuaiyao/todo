@@ -34,8 +34,13 @@ class dayFunctions {
         Data.dayModels[indexPath.section].taskModels[indexPath.row].title = title
     }
     
-    static func deleteTaskInExistedDay(indexPath: IndexPath) {
+    static func deleteTaskInExistedDay(indexPath: IndexPath) -> (Bool) {
 //        Data.taskModels.remove(at: index)
         Data.dayModels[indexPath.section].taskModels.remove(at: indexPath.row)
+        if Data.dayModels[indexPath.section].taskModels.count == 0 {
+            Data.dayModels.remove(at: indexPath.section)
+            return true
+        }
+        return false
     }
 }

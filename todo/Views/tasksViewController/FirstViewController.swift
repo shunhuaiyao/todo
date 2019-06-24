@@ -180,8 +180,12 @@ extension FirstViewController: UITableViewDelegate, UITableViewDataSource {
     }
     func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
         let delete = UIContextualAction(style: .destructive, title: "Delete") { (contextualAction, view, actionPerformed: (Bool) -> ()) in
-            dayFunctions.deleteTaskInExistedDay(indexPath: indexPath)
-            tableView.deleteRows(at: [indexPath], with: .left)
+            let hasEmptyTask = dayFunctions.deleteTaskInExistedDay(indexPath: indexPath)
+            if hasEmptyTask {
+                tableView.deleteSections(IndexSet(arrayLiteral: indexPath.section), with: .left)
+            } else {
+                tableView.deleteRows(at: [indexPath], with: .left)
+            }
             actionPerformed(true)
         }
         return UISwipeActionsConfiguration(actions: [delete])
