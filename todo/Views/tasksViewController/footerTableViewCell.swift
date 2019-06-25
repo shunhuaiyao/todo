@@ -19,10 +19,10 @@ class footerTableViewCell: UITableViewCell {
 
     
     func setup() {
-        self.footerView.layer.cornerRadius = 25
-        self.footerView.layer.maskedCorners = [.layerMinXMaxYCorner, .layerMaxXMaxYCorner]
-        self.footerView.layer.shadowOpacity = 0.75
-        self.footerView.layer.shadowOffset = CGSize.zero
-        self.footerView.layer.shadowColor = UIColor.lightGray.cgColor
+//        self.footerView.layer.cornerRadius = 25
+//        self.footerView.layer.maskedCorners = [.layerMinXMaxYCorner, .layerMaxXMaxYCorner]
+//        self.footerView.layer.shadowOpacity = 0.75
+//        self.footerView.layer.shadowOffset = CGSize.zero
+//        self.footerView.layer.shadowColor = UIColor.lightGray.cgColor
     }
 }

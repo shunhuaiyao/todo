@@ -20,8 +20,8 @@ class daysTableViewCell: UITableViewCell {
     
     func setup(dayModel: dayModel) {
         
-        self.dayContentView.layer.cornerRadius = 25
-        self.dayContentView.layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMinYCorner]
+//        self.dayContentView.layer.cornerRadius = 25
+//        self.dayContentView.layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMinYCorner]
         self.dateLabel.text = dayModel.weekString + "," + dayModel.dateString
     }
 

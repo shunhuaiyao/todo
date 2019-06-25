@@ -15,6 +15,7 @@ class FirstViewController: UIViewController {
     var currentSelectedDate: Date?
     @IBOutlet weak var monthYearLabel: UILabel!
     @IBOutlet weak var calendarView: JTAppleCalendarView!
+    @IBOutlet weak var calendarShadowView: UIView!
     @IBOutlet weak var calendarHeightConstraint: NSLayoutConstraint!
     @IBOutlet weak var weekMonthToggleButton: UIButton!
     @IBOutlet weak var todoTasksTableView: UITableView!
@@ -29,6 +30,9 @@ class FirstViewController: UIViewController {
         dayFunctions.readDays(completion: { [unowned self] in
             self.todoTasksTableView.reloadData()
         })
+        self.calendarShadowView.layer.shadowColor = UIColor.darkGray.cgColor
+        self.calendarShadowView.layer.shadowOpacity = 1
+        self.calendarShadowView.layer.shadowOffset = CGSize.zero
     }
     
     
@@ -51,9 +55,15 @@ class FirstViewController: UIViewController {
     
     func handleCellSelected(cell: DateCell, cellState: CellState) {
         if cellState.isSelected {
-            cell.selectedView.layer.cornerRadius = cell.selectedView.frame.size.width / 2
+            cell.dateLabel.textColor = UIColor.white
+            cell.selectedView.layer.cornerRadius = cell.selectedView.frame.size.height / 2
             cell.selectedView.isHidden = false
         } else {
+            if cellState.dateBelongsTo == .thisMonth {
+                cell.dateLabel.textColor = UIColor.black
+            } else {
+                cell.dateLabel.textColor = UIColor.gray
+            }
             cell.selectedView.isHidden = true
         }
     }
@@ -98,12 +108,12 @@ class FirstViewController: UIViewController {
         UIView.animate(withDuration: 0.2, animations: {
             if self.numberOfRows == 6 {
                 self.numberOfRows = 1
-                self.calendarHeightConstraint.constant = 30
+                self.calendarHeightConstraint.constant = 40
                 self.weekMonthToggleButton.transform = self.weekMonthToggleButton.transform.rotated(by: CGFloat(Double.pi))
             }
             else {
                 self.numberOfRows = 6
-                self.calendarHeightConstraint.constant = 180
+                self.calendarHeightConstraint.constant = 240
                 self.weekMonthToggleButton.transform = self.weekMonthToggleButton.transform.rotated(by: CGFloat(Double.pi))
             }
             self.view.layoutIfNeeded()
