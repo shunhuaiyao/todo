@@ -16,9 +16,9 @@ class tasksTableViewCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
-        self.taskView.layer.shadowOpacity = 1
-        self.taskView.layer.shadowOffset = CGSize.zero
-        self.taskView.layer.shadowColor = UIColor.darkGray.cgColor
+//        self.taskView.layer.shadowOpacity = 1
+//        self.taskView.layer.shadowOffset = CGSize.zero
+//        self.taskView.layer.shadowColor = UIColor.darkGray.cgColor
         self.taskView.layer.cornerRadius = 10
         self.taskView.backgroundColor = Theme.accentColor
     }

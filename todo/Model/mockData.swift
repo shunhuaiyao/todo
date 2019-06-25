@@ -11,8 +11,8 @@ import Foundation
 class mockData {
     static func createMockDayModelsData() -> [dayModel] {
         var mockDayModels = [dayModel]()
-        mockDayModels.append(dayModel(date: Date().addingTimeInterval(86400), taskModels: createMockTaskModelsData(numTasks: 2)))
         mockDayModels.append(dayModel(date: Date(), taskModels: createMockTaskModelsData(numTasks: 3)))
+        mockDayModels.append(dayModel(date: Date().addingTimeInterval(86400), taskModels: createMockTaskModelsData(numTasks: 2)))
         return mockDayModels
     }
     static func createMockTaskModelsData(numTasks: Int) -> [taskModel] {

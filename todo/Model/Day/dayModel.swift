@@ -12,6 +12,7 @@ struct dayModel {
     var id: UUID
     var date: Date
     var dateString: String
+    var weekString: String
     var taskModels = [taskModel]()
     
     init(date: Date, taskModels: [taskModel]? = nil) {
@@ -19,8 +20,10 @@ struct dayModel {
         self.date = date
         
         let formatter = DateFormatter()
-        formatter.dateFormat = " MMMM dd"
+        formatter.dateFormat = " MMM dd"
         self.dateString = formatter.string(from: date)
+        formatter.dateFormat = "E"
+        self.weekString = formatter.string(from: date)
         
         if let taskModels = taskModels {
             self.taskModels = taskModels

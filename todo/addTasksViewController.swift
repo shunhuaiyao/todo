@@ -97,7 +97,7 @@ class addTasksViewController: UIViewController {
     
     func dayAlreadyExists(_ date: Date) -> Int? {
         let formatter = DateFormatter()
-        formatter.dateFormat = " MMMM dd"
+        formatter.dateFormat = " MMM dd"
         let dateString = formatter.string(from: date)
         
         for (index, dayModel) in Data.dayModels.enumerated() {

@@ -23,7 +23,7 @@ class FirstViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        self.monthYearLabel.font = UIFont(name: Theme.mainFontName, size: 17)
+//        self.monthYearLabel.font = UIFont(name: Theme.mainFontName, size: 17)
         self.todoTasksTableView.dataSource = self
         self.todoTasksTableView.delegate = self
         dayFunctions.readDays(completion: { [unowned self] in
@@ -35,7 +35,7 @@ class FirstViewController: UIViewController {
     func configureCell(view: JTAppleCell?, cellState: CellState) {
         guard let cell = view as? DateCell  else { return }
         cell.dateLabel.text = cellState.text
-        cell.dateLabel.font = UIFont(name: Theme.mainFontName, size: 17)
+//        cell.dateLabel.font = UIFont(name: Theme.mainFontName, size: 17)
         handleCellTextColor(cell: cell, cellState: cellState)
         handleCellSelected(cell: cell, cellState: cellState)
         handleMonthYearState(cell: cell, cellState: cellState)
@@ -164,9 +164,9 @@ extension FirstViewController: UITableViewDelegate, UITableViewDataSource {
     func numberOfSections(in tableView: UITableView) -> Int {
         return Data.dayModels.count
     }
-    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        return Data.dayModels[section].dateString
-    }
+//    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+//        return Data.dayModels[section].weekString + Data.dayModels[section].dateString
+//    }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return Data.dayModels[section].taskModels.count
     }
@@ -177,6 +177,25 @@ extension FirstViewController: UITableViewDelegate, UITableViewDataSource {
     }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 120
+    }
+    
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "headerCell") as? daysTableViewCell
+        cell?.setup(dayModel: Data.dayModels[section])
+        return cell?.contentView
+    }
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "headerCell") as! daysTableViewCell
+        return cell.bounds.height
+    }
+    func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "footerCell") as? footerTableViewCell
+        cell?.setup()
+        return cell?.contentView
+    }
+    func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "footerCell") as! footerTableViewCell
+        return cell.bounds.height
     }
     func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
         let delete = UIContextualAction(style: .destructive, title: "Delete") { (contextualAction, view, actionPerformed: (Bool) -> ()) in
