@@ -10,7 +10,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Statistics-->
+        <!--Stats-->
         <scene sceneID="C1e-a4-pNg">
             <objects>
                 <viewController id="s6U-u1-dol" sceneMemberID="viewController">
@@ -20,7 +20,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="I9A-WR-oWk"/>
                     </view>
-                    <tabBarItem key="tabBarItem" tag="2" title="Statistics" image="chart" id="lZM-ij-ePE"/>
+                    <tabBarItem key="tabBarItem" tag="2" title="Stats" image="chart" id="lZM-ij-ePE"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YO3-ix-yZl" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -438,22 +438,50 @@
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MCL-Dk-epo">
                                                     <rect key="frame" x="20" y="11" width="374" height="98"/>
                                                     <subviews>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Check email" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="22d-Hu-gg9">
-                                                            <rect key="frame" x="44" y="32" width="238" height="35"/>
-                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                            <fontDescription key="fontDescription" type="system" pointSize="28"/>
-                                                            <color key="textColor" red="0.29418522120000001" green="0.29794457549999998" blue="0.30196183920000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Check email" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="22d-Hu-gg9">
+                                                            <rect key="frame" x="46.000000000000007" y="35" width="122.66666666666669" height="28"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="23"/>
+                                                            <color key="textColor" red="0.29411764705882354" green="0.29803921568627451" blue="0.30196078431372547" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="6:00 - 7:00 p.m." lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vT8-H5-4AE">
-                                                            <rect key="frame" x="189" y="8" width="93" height="15"/>
-                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="11:00 - 01:00 PM" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vT8-H5-4AE">
+                                                            <rect key="frame" x="260" y="8" width="106" height="15"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                             <color key="textColor" red="0.29418522120000001" green="0.29794457549999998" blue="0.30196183920000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
+                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Uwc-mf-VJx">
+                                                            <rect key="frame" x="17" y="45" width="8" height="8"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="width" secondItem="Uwc-mf-VJx" secondAttribute="height" multiplier="1:1" id="Xsg-bL-lEH"/>
+                                                            </constraints>
+                                                            <state key="normal" image="uncheckedButton"/>
+                                                            <connections>
+                                                                <action selector="checkButton:" destination="55S-Ay-hwA" eventType="touchUpInside" id="RIM-6E-5XZ"/>
+                                                            </connections>
+                                                        </button>
+                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.0" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="removeLine" translatesAutoresizingMaskIntoConstraints="NO" id="kac-0h-BLB">
+                                                            <rect key="frame" x="40" y="48.666666666666664" width="234" height="1"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="height" constant="1" id="7f6-zK-t6b"/>
+                                                            </constraints>
+                                                        </imageView>
                                                     </subviews>
                                                     <color key="backgroundColor" red="0.96862745098039216" green="0.97254901960784312" blue="0.97647058823529409" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                    <constraints>
+                                                        <constraint firstItem="vT8-H5-4AE" firstAttribute="leading" relation="lessThanOrEqual" secondItem="MCL-Dk-epo" secondAttribute="leading" constant="260" id="87L-Ac-VYO"/>
+                                                        <constraint firstItem="vT8-H5-4AE" firstAttribute="top" secondItem="MCL-Dk-epo" secondAttribute="top" constant="8" id="A41-qi-1Yk"/>
+                                                        <constraint firstItem="Uwc-mf-VJx" firstAttribute="top" secondItem="MCL-Dk-epo" secondAttribute="top" constant="45" id="FaV-Vq-fVm"/>
+                                                        <constraint firstAttribute="trailing" secondItem="kac-0h-BLB" secondAttribute="trailing" constant="100" id="Mtk-gq-Wsz"/>
+                                                        <constraint firstItem="22d-Hu-gg9" firstAttribute="top" secondItem="MCL-Dk-epo" secondAttribute="top" constant="35" id="On1-tr-69A"/>
+                                                        <constraint firstAttribute="bottom" secondItem="Uwc-mf-VJx" secondAttribute="bottom" constant="45" id="TbY-FK-OOM"/>
+                                                        <constraint firstItem="Uwc-mf-VJx" firstAttribute="leading" secondItem="MCL-Dk-epo" secondAttribute="leading" constant="17" id="WT7-nX-F0r"/>
+                                                        <constraint firstItem="22d-Hu-gg9" firstAttribute="leading" secondItem="Uwc-mf-VJx" secondAttribute="trailing" constant="21" id="X9z-xB-YW5"/>
+                                                        <constraint firstAttribute="trailing" secondItem="vT8-H5-4AE" secondAttribute="trailing" constant="8" id="ezj-3O-CWH"/>
+                                                        <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="22d-Hu-gg9" secondAttribute="trailing" constant="100" id="l8H-4s-92Y"/>
+                                                        <constraint firstItem="kac-0h-BLB" firstAttribute="leading" secondItem="MCL-Dk-epo" secondAttribute="leading" constant="40" id="nqr-El-iql"/>
+                                                        <constraint firstItem="kac-0h-BLB" firstAttribute="centerY" secondItem="MCL-Dk-epo" secondAttribute="centerY" id="oir-pO-hcX"/>
+                                                    </constraints>
                                                 </view>
                                             </subviews>
                                             <color key="backgroundColor" red="0.90595716240000002" green="0.90969580409999995" blue="0.91372728349999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -465,16 +493,18 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
+                                            <outlet property="checkButtonOutlet" destination="Uwc-mf-VJx" id="xbT-mr-zC3"/>
+                                            <outlet property="checkedLineOutlet" destination="kac-0h-BLB" id="8Y7-rZ-V1i"/>
                                             <outlet property="taskTitleLabel" destination="22d-Hu-gg9" id="W9Y-8J-olk"/>
                                             <outlet property="taskView" destination="MCL-Dk-epo" id="S4e-8s-F0N"/>
                                             <outlet property="timeLabel" destination="vT8-H5-4AE" id="aAb-Ip-zhU"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="footerCell" editingAccessoryType="checkmark" rowHeight="9.9999999999999716" id="6xv-0z-TEz" customClass="footerTableViewCell" customModule="todo" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="222.33333333333334" width="414" height="10"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="footerCell" editingAccessoryType="checkmark" rowHeight="5" id="6xv-0z-TEz" customClass="footerTableViewCell" customModule="todo" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="222.33333333333334" width="414" height="5"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="6xv-0z-TEz" id="Tzy-Gg-T13">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="10"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Epd-eU-tkU">
@@ -546,7 +576,9 @@
         <image name="addTasks" width="25" height="25"/>
         <image name="chart" width="25" height="25"/>
         <image name="cross" width="25" height="25"/>
+        <image name="removeLine" width="73" height="5.3333334922790527"/>
         <image name="tasks" width="25" height="25"/>
+        <image name="uncheckedButton" width="170.66667175292969" height="170.66667175292969"/>
         <image name="upArrow" width="25" height="25"/>
     </resources>
     <inferredMetricsTieBreakers>
