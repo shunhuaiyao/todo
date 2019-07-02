@@ -12,16 +12,28 @@ struct taskModel{
     var id: UUID
     var title: String
     var check: Bool
-    var startTime: Date?
-    var endTime: Date?
+    var startTime: Date
+    var endTime: Date
     var subtaskModels = [subtaskModel]()
     
-    init(title: String, subtaskModels: [subtaskModel]? = nil) {
+    init(title: String, startTime: Date, endTime: Date, subtaskModels: [subtaskModel]? = nil) {
         self.id = UUID()
         self.title = title
         self.check = false
+        self.startTime = startTime
+        self.endTime = endTime
         if let subtaskModels = subtaskModels {
             self.subtaskModels = subtaskModels
         }
+    }
+}
+
+extension taskModel: Comparable {
+    static func < (lhs: taskModel, rhs: taskModel) -> Bool {
+        return lhs.startTime < rhs.startTime
+    }
+    
+    static func == (lhs: taskModel, rhs: taskModel) -> Bool {
+        return lhs.startTime == rhs.startTime
     }
 }

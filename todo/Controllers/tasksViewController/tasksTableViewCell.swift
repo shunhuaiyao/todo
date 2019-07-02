@@ -36,6 +36,13 @@ class tasksTableViewCell: UITableViewCell {
     
     func setupCell(taskModel: taskModel) {
         self.taskTitleLabel.text = taskModel.title
+        
+        let formatter = DateFormatter()
+        formatter.dateFormat = "hh:mm "
+        let startTimeString = formatter.string(from: taskModel.startTime)
+        formatter.dateFormat = " hh:mm a"
+        let endTimeString = formatter.string(from: taskModel.endTime)
+        self.timeLabel.text = startTimeString + "-" + endTimeString
     }
     @IBAction func checkButton(_ sender: Any) {
         self.checkButtonOutlet.isSelected = !self.checkButtonOutlet.isSelected

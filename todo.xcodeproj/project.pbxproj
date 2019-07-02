@@ -25,13 +25,14 @@
 		20C2EB1E22BDC8EC000CC95B /* Hannotate.ttc in Resources */ = {isa = PBXBuildFile; fileRef = 20C2EB1D22BDC8EC000CC95B /* Hannotate.ttc */; };
 		20C2EB2022BDC936000CC95B /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20C2EB1F22BDC936000CC95B /* Theme.swift */; };
 		20C2EB2222BDCEAB000CC95B /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 20C2EB2122BDCEAB000CC95B /* Colors.xcassets */; };
-		20C2EB2522BDD8CD000CC95B /* UIButtonExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20C2EB2422BDD8CD000CC95B /* UIButtonExtensions.swift */; };
+		20C2EB2522BDD8CD000CC95B /* UIButtonExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20C2EB2422BDD8CD000CC95B /* UIButtonExtension.swift */; };
 		20C2EB2922C0AEDA000CC95B /* dayModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20C2EB2822C0AEDA000CC95B /* dayModel.swift */; };
 		20C2EB2B22C0B78F000CC95B /* subtaskModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20C2EB2A22C0B78F000CC95B /* subtaskModel.swift */; };
 		20C2EB2D22C0BB48000CC95B /* mockData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20C2EB2C22C0BB48000CC95B /* mockData.swift */; };
 		20C2EB2F22C1D33E000CC95B /* daysTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20C2EB2E22C1D33E000CC95B /* daysTableViewCell.swift */; };
 		20C2EB3122C21F62000CC95B /* footerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20C2EB3022C21F62000CC95B /* footerTableViewCell.swift */; };
 		20C2EB3322C7302A000CC95B /* FirstViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20C2EB3222C7302A000CC95B /* FirstViewControllerExtension.swift */; };
+		20C2EB3922CA6819000CC95B /* DateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20C2EB3822CA6819000CC95B /* DateExtension.swift */; };
 		8E27A1F8A11EDA6ED106B8C2 /* Pods_todo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AFCDBF7A7DC6D756CD5CF26D /* Pods_todo.framework */; };
 /* End PBXBuildFile section */
 
@@ -56,13 +57,14 @@
 		20C2EB1D22BDC8EC000CC95B /* Hannotate.ttc */ = {isa = PBXFileReference; lastKnownFileType = file; path = Hannotate.ttc; sourceTree = "<group>"; };
 		20C2EB1F22BDC936000CC95B /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
 		20C2EB2122BDCEAB000CC95B /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
-		20C2EB2422BDD8CD000CC95B /* UIButtonExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIButtonExtensions.swift; sourceTree = "<group>"; };
+		20C2EB2422BDD8CD000CC95B /* UIButtonExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIButtonExtension.swift; sourceTree = "<group>"; };
 		20C2EB2822C0AEDA000CC95B /* dayModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = dayModel.swift; sourceTree = "<group>"; };
 		20C2EB2A22C0B78F000CC95B /* subtaskModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = subtaskModel.swift; sourceTree = "<group>"; };
 		20C2EB2C22C0BB48000CC95B /* mockData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = mockData.swift; sourceTree = "<group>"; };
 		20C2EB2E22C1D33E000CC95B /* daysTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = daysTableViewCell.swift; sourceTree = "<group>"; };
 		20C2EB3022C21F62000CC95B /* footerTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = footerTableViewCell.swift; sourceTree = "<group>"; };
 		20C2EB3222C7302A000CC95B /* FirstViewControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewControllerExtension.swift; sourceTree = "<group>"; };
+		20C2EB3822CA6819000CC95B /* DateExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateExtension.swift; sourceTree = "<group>"; };
 		7B879706601D73536524FFA1 /* Pods-todo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-todo.release.xcconfig"; path = "Target Support Files/Pods-todo/Pods-todo.release.xcconfig"; sourceTree = "<group>"; };
 		AFCDBF7A7DC6D756CD5CF26D /* Pods_todo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_todo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D08C404D78EE6319C4EEB859 /* Pods-todo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-todo.debug.xcconfig"; path = "Target Support Files/Pods-todo/Pods-todo.debug.xcconfig"; sourceTree = "<group>"; };
@@ -145,7 +147,6 @@
 		20C2EB1122BD0B0B000CC95B /* datePickerViewController */ = {
 			isa = PBXGroup;
 			children = (
-				20C2EB1522BD1277000CC95B /* datePickerViewController.storyboard */,
 				20A4BDD322B2889200833BD2 /* datePickerViewController.swift */,
 			);
 			path = datePickerViewController;
@@ -188,8 +189,9 @@
 		20C2EB2322BDD889000CC95B /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				20C2EB2422BDD8CD000CC95B /* UIButtonExtensions.swift */,
+				20C2EB2422BDD8CD000CC95B /* UIButtonExtension.swift */,
 				20C2EB3222C7302A000CC95B /* FirstViewControllerExtension.swift */,
+				20C2EB3822CA6819000CC95B /* DateExtension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -231,6 +233,7 @@
 			isa = PBXGroup;
 			children = (
 				20BE859022AD60E900988390 /* Main.storyboard */,
+				20C2EB1522BD1277000CC95B /* datePickerViewController.storyboard */,
 				20BE859522AD60EA00988390 /* LaunchScreen.storyboard */,
 			);
 			path = Views;
@@ -372,6 +375,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				20C2EB1A22BD319C000CC95B /* tasksTableViewCell.swift in Sources */,
+				20C2EB3922CA6819000CC95B /* DateExtension.swift in Sources */,
 				20BE858F22AD60E900988390 /* statsViewComtroller.swift in Sources */,
 				20A4BDD222B143F200833BD2 /* addTasksViewController.swift in Sources */,
 				20BE858B22AD60E900988390 /* AppDelegate.swift in Sources */,
@@ -381,7 +385,7 @@
 				20C2EB3122C21F62000CC95B /* footerTableViewCell.swift in Sources */,
 				20C2EB0722BCD399000CC95B /* dayFunctions.swift in Sources */,
 				20A4BDD422B2889200833BD2 /* datePickerViewController.swift in Sources */,
-				20C2EB2522BDD8CD000CC95B /* UIButtonExtensions.swift in Sources */,
+				20C2EB2522BDD8CD000CC95B /* UIButtonExtension.swift in Sources */,
 				20BE858D22AD60E900988390 /* FirstViewController.swift in Sources */,
 				20C2EB0522BCD386000CC95B /* taskModel.swift in Sources */,
 				20C2EB2922C0AEDA000CC95B /* dayModel.swift in Sources */,
@@ -546,7 +550,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.shunhuaiyao.todo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -566,7 +570,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.shunhuaiyao.todo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;

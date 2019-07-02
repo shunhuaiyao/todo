@@ -18,10 +18,14 @@ class mockData {
     static func createMockTaskModelsData(numTasks: Int) -> [taskModel] {
         var mockTaskModels = [taskModel]()
         if numTasks == 3 {
-            mockTaskModels.append(taskModel(title: "check email"))
+            mockTaskModels.append(taskModel(title: "check email", startTime: Date().add(hours: 8), endTime: Date().add(hours: 9)))
+            mockTaskModels.append(taskModel(title: "update addTasks UI", startTime: Date().add(hours: 10), endTime: Date().add(hours: 11)))
+            mockTaskModels.append(taskModel(title: "buy eggs", startTime: Date().add(hours: 11), endTime: Date().add(hours: 12), subtaskModels: createMockSubtaskModelsData()))
+        } else {
+            mockTaskModels.append(taskModel(title: "check email", startTime: Date().add(days: 1).add(hours: 8), endTime: Date().add(days: 1).add(hours: 9)))
+            mockTaskModels.append(taskModel(title: "make meatballs", startTime: Date().add(days: 1).add(hours: 12), endTime: Date().add(days: 1).add(hours: 13)))
         }
-        mockTaskModels.append(taskModel(title: "call meatball"))
-        mockTaskModels.append(taskModel(title: "buy eggs", subtaskModels: createMockSubtaskModelsData()))
+        
         return mockTaskModels
     }
     static func createMockSubtaskModelsData() -> [subtaskModel] {

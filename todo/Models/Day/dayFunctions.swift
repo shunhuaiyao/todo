@@ -12,16 +12,19 @@ class dayFunctions {
     
     static func createDay(dayModel: dayModel) {
         Data.dayModels.append(dayModel)
+        Data.dayModels = Data.dayModels.sorted(by: <)
     }
     
     static func createTaskInExistedDay(at dayIndex: Int, taskModel: taskModel) {
         Data.dayModels[dayIndex].taskModels.append(taskModel)
+        Data.dayModels[dayIndex].taskModels = Data.dayModels[dayIndex].taskModels.sorted(by: <)
+        Data.dayModels = Data.dayModels.sorted(by: <)
     }
     
     static func readDays(completion: @escaping () -> ()) {
         DispatchQueue.global(qos: .userInteractive).async {
             if Data.dayModels.count == 0 {
-                Data.dayModels = mockData.createMockDayModelsData()
+//                Data.dayModels = mockData.createMockDayModelsData()
             }
             DispatchQueue.main.async {
                 completion()
@@ -29,9 +32,10 @@ class dayFunctions {
         }
     }
     
-    static func updateDay(at indexPath: IndexPath, title: String) {
+    static func updateTask(at indexPath: IndexPath, title: String) {
 //        Data.taskModels[index].title = title
         Data.dayModels[indexPath.section].taskModels[indexPath.row].title = title
+        Data.dayModels = Data.dayModels.sorted(by: <)
     }
     
     static func deleteTaskInExistedDay(indexPath: IndexPath) -> (Bool) {

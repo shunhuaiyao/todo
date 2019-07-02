@@ -30,16 +30,20 @@ class addTasksViewController: UIViewController {
     @IBAction func addTodoButton(_ sender: Any) {
         
         if let indexPath = taskIndexPathToEdit {
-//            taskFunctions.updateTask(at: index, title: self.taskTitleOutlet.text ?? Data.taskModels[index].title)
-            dayFunctions.updateDay(at: indexPath, title: self.taskTitleOutlet.text ?? Data.dayModels[indexPath.section].taskModels[indexPath.row].title)
+            dayFunctions.updateTask(at: indexPath, title: self.taskTitleOutlet.text ?? Data.dayModels[indexPath.section].taskModels[indexPath.row].title)
             
         } else {
-            if let dayIndex = dayAlreadyExists(Date()) {
-                dayFunctions.createTaskInExistedDay(at: dayIndex, taskModel: taskModel(title: taskTitleOutlet.text!))
+            let formatter = DateFormatter()
+            formatter.dateStyle = .medium
+            formatter.timeStyle = .short
+            let startTimeDate = formatter.date(from: startTimeOutlet.titleLabel!.text!)
+            let endTimeDate = formatter.date(from: endTimeOutlet.titleLabel!.text!)
+            if let dayIndex = dayAlreadyExists(startTimeDate!) {
+                dayFunctions.createTaskInExistedDay(at: dayIndex, taskModel: taskModel(title: taskTitleOutlet.text!, startTime: startTimeDate!, endTime: endTimeDate!))
             } else {
                 var taskModels = [taskModel]()
-                taskModels.append(taskModel(title: taskTitleOutlet.text!))
-                dayFunctions.createDay(dayModel: dayModel(date: Date(), taskModels: taskModels))
+                taskModels.append(taskModel(title: taskTitleOutlet.text!, startTime: startTimeDate!, endTime: endTimeDate!))
+                dayFunctions.createDay(dayModel: dayModel(date: startTimeDate!, taskModels: taskModels))
             }
         }
         if let doneAddingTask = doneAddingTask {
@@ -48,6 +52,9 @@ class addTasksViewController: UIViewController {
         self.dismiss(animated: true, completion: nil)
     }
     
+    @IBAction func nextPrimaryAction(_ sender: UITextField) {
+        sender.resignFirstResponder()
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
@@ -68,9 +75,9 @@ class addTasksViewController: UIViewController {
             self.addTodoOutlet.setTitle("Save", for: .normal)
             let task = Data.dayModels[indexPath.section].taskModels[indexPath.row]
             self.taskTitleOutlet.text = task.title
-            dateTime = " " + formatter.string(from: task.startTime ?? Date())
+            dateTime = " " + formatter.string(from: task.startTime )
             self.startTimeOutlet.setTitle(dateTime, for: .normal)
-            dateTime = " " + formatter.string(from: task.endTime ?? Date())
+            dateTime = " " + formatter.string(from: task.endTime)
             self.endTimeOutlet.setTitle(dateTime, for: .normal)
         }
         
@@ -89,10 +96,6 @@ class addTasksViewController: UIViewController {
                 self.endTimeOutlet.setTitle(dateTime, for: .normal)
             }
         }
-    }
-    
-    deinit {
-        print("addTasksViewController deinit")
     }
     
     func dayAlreadyExists(_ date: Date) -> Int? {

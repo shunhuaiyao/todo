@@ -29,5 +29,14 @@ struct dayModel {
             self.taskModels = taskModels
         }
     }
+}
 
+extension dayModel: Comparable {
+    static func < (lhs: dayModel, rhs: dayModel) -> Bool {
+        return lhs.date < rhs.date
+    }
+    
+    static func == (lhs: dayModel, rhs: dayModel) -> Bool {
+        return lhs.id == rhs.id
+    }
 }
