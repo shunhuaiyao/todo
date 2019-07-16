@@ -9,7 +9,7 @@
 import UIKit
 import JTAppleCalendar
 
-class DateCell: JTAppleCell {
+class DateCell: JTACDayCell {
 
     /*
     // Only override draw() if you perform custom drawing.

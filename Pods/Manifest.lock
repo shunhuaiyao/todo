@@ -1,24 +1,22 @@
 PODS:
-  - JTAppleCalendar (7.1.7)
-  - PMSuperButton (3.0.1)
-  - Presentr (1.9)
+  - Charts (3.3.0):
+    - Charts/Core (= 3.3.0)
+  - Charts/Core (3.3.0)
+  - JTAppleCalendar (8.0.0)
 
 DEPENDENCIES:
+  - Charts
   - JTAppleCalendar
-  - PMSuperButton
-  - Presentr
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
+    - Charts
     - JTAppleCalendar
-    - PMSuperButton
-    - Presentr
 
 SPEC CHECKSUMS:
-  JTAppleCalendar: 96da4d8388fa6dc82d6a60d41ef36a015e167e2f
-  PMSuperButton: 2bef6f8659a5df969a69887f496ef309480c65eb
-  Presentr: 7078d7eb5d1661ebeaae60c9e42a1e534de1b993
+  Charts: e0dd4cd8f257bccf98407b58183ddca8e8d5b578
+  JTAppleCalendar: 76ccdc5a8b236166293e50b190c5f2722c30cdcd
 
-PODFILE CHECKSUM: a5a5b991af9442a18df2f157fb6cf546001242a8
+PODFILE CHECKSUM: a20f72a32391735a1e1963ac6c396b501c57f7fd
 
 COCOAPODS: 1.7.1

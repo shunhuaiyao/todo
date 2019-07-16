@@ -9,8 +9,8 @@
 import UIKit
 import JTAppleCalendar
 
-extension FirstViewController: JTAppleCalendarViewDataSource {
-    func configureCalendar(_ calendar: JTAppleCalendarView) -> ConfigurationParameters {
+extension FirstViewController: JTACMonthViewDataSource {
+    func configureCalendar(_ calendar: JTACMonthView) -> ConfigurationParameters {
         let formatter = DateFormatter()
         formatter.dateFormat = "yyyy MM dd"
         let startDate = formatter.date(from: "2019 06 01")!
@@ -28,21 +28,21 @@ extension FirstViewController: JTAppleCalendarViewDataSource {
     }
 }
 
-extension FirstViewController: JTAppleCalendarViewDelegate {
-    func calendar(_ calendar: JTAppleCalendarView, cellForItemAt date: Date, cellState: CellState, indexPath: IndexPath) -> JTAppleCell {
+extension FirstViewController: JTACMonthViewDelegate {
+    
+    func calendar(_ calendar: JTACMonthView, cellForItemAt date: Date, cellState: CellState, indexPath: IndexPath) -> JTACDayCell {
         let cell = calendar.dequeueReusableJTAppleCell(withReuseIdentifier: "dateCell", for: indexPath) as! DateCell
         self.calendar(calendar, willDisplay: cell, forItemAt: date, cellState: cellState, indexPath: indexPath)
         return cell
     }
-    func calendar(_ calendar: JTAppleCalendarView, willDisplay cell: JTAppleCell, forItemAt date: Date, cellState: CellState, indexPath: IndexPath) {
+    func calendar(_ calendar: JTACMonthView, willDisplay cell: JTACDayCell, forItemAt date: Date, cellState: CellState, indexPath: IndexPath) {
         configureCell(view: cell, cellState: cellState)
     }
-    func calendar(_ calendar: JTAppleCalendarView, didSelectDate date: Date, cell: JTAppleCell?, cellState: CellState) {
+    func calendar(_ calendar: JTACMonthView, didSelectDate date: Date, cell: JTACDayCell?, cellState: CellState, indexPath: IndexPath) {
         configureCell(view: cell, cellState: cellState)
         self.currentSelectedDate = cellState.date
     }
-    
-    func calendar(_ calendar: JTAppleCalendarView, didDeselectDate date: Date, cell: JTAppleCell?, cellState: CellState) {
+    func calendar(_ calendar: JTACMonthView, didDeselectDate date: Date, cell: JTACDayCell?, cellState: CellState, indexPath: IndexPath) {
         configureCell(view: cell, cellState: cellState)
     }
 }
@@ -65,7 +65,7 @@ extension FirstViewController: UITableViewDelegate, UITableViewDataSource {
         return cell
     }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 120
+        return 100
     }
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {

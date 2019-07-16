@@ -14,9 +14,10 @@ class FirstViewController: UIViewController {
     var numberOfRows = 6
     var currentSelectedDate: Date?
     @IBOutlet weak var monthYearLabel: UILabel!
-    @IBOutlet weak var calendarView: JTAppleCalendarView!
+    @IBOutlet weak var calendarView: JTACMonthView!
     @IBOutlet weak var calendarShadowView: UIView!
     @IBOutlet weak var calendarHeightConstraint: NSLayoutConstraint!
+    @IBOutlet weak var calendarShadowHeightConstraint: NSLayoutConstraint!
     @IBOutlet weak var weekMonthToggleButton: UIButton!
     @IBOutlet weak var todoTasksTableView: UITableView!
     var taskIndexPathToEdit: IndexPath?
@@ -36,7 +37,7 @@ class FirstViewController: UIViewController {
     }
     
     
-    func configureCell(view: JTAppleCell?, cellState: CellState) {
+    func configureCell(view: JTACDayCell?, cellState: CellState) {
         guard let cell = view as? DateCell  else { return }
         cell.dateLabel.text = cellState.text
 //        cell.dateLabel.font = UIFont(name: Theme.mainFontName, size: 17)
@@ -108,16 +109,18 @@ class FirstViewController: UIViewController {
         UIView.animate(withDuration: 0.2, animations: {
             if self.numberOfRows == 6 {
                 self.numberOfRows = 1
-                self.calendarHeightConstraint.constant = 40
+                self.calendarHeightConstraint.constant = 35
+                self.calendarShadowHeightConstraint.constant = 16
                 self.weekMonthToggleButton.transform = self.weekMonthToggleButton.transform.rotated(by: CGFloat(Double.pi))
             }
             else {
                 self.numberOfRows = 6
-                self.calendarHeightConstraint.constant = 240
+                self.calendarHeightConstraint.constant = 210
+                self.calendarShadowHeightConstraint.constant = 191
                 self.weekMonthToggleButton.transform = self.weekMonthToggleButton.transform.rotated(by: CGFloat(Double.pi))
             }
             self.view.layoutIfNeeded()
-            self.calendarView.reloadData(withanchor: self.currentSelectedDate)
+            self.calendarView.reloadData(withAnchor: self.currentSelectedDate)
         })
     }
     

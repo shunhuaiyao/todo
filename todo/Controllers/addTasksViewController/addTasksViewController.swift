@@ -7,8 +7,6 @@
 //
 
 import UIKit
-import Presentr
-import PMSuperButton
 
 class addTasksViewController: UIViewController {
 

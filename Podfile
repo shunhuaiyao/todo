@@ -8,6 +8,5 @@ target 'todo' do
   # Pods for todo
 
   pod 'JTAppleCalendar'
-  pod 'PMSuperButton'
-  pod 'Presentr'
+  pod 'Charts'
 end
