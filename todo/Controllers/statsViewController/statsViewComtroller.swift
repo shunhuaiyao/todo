@@ -10,11 +10,15 @@ import UIKit
 
 class statsViewComtroller: UIViewController {
 
+    @IBOutlet weak var basePieChartView: BasePieChartView!
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
     }
-
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        basePieChartView.play()
+    }
 
 }
 

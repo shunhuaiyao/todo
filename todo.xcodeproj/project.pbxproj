@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2034C86D22DED3E100D1374F /* BasePieChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2034C86C22DED3E100D1374F /* BasePieChartView.swift */; };
 		20A4BDCE22AE449200833BD2 /* DateCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20A4BDCD22AE449200833BD2 /* DateCell.swift */; };
 		20A4BDD022B13F1700833BD2 /* mainTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20A4BDCF22B13F1700833BD2 /* mainTabBarViewController.swift */; };
 		20A4BDD222B143F200833BD2 /* addTasksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20A4BDD122B143F200833BD2 /* addTasksViewController.swift */; };
@@ -37,6 +38,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2034C86C22DED3E100D1374F /* BasePieChartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasePieChartView.swift; sourceTree = "<group>"; };
 		20A4BDCD22AE449200833BD2 /* DateCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateCell.swift; sourceTree = "<group>"; };
 		20A4BDCF22B13F1700833BD2 /* mainTabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = mainTabBarViewController.swift; sourceTree = "<group>"; };
 		20A4BDD122B143F200833BD2 /* addTasksViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = addTasksViewController.swift; sourceTree = "<group>"; };
@@ -235,6 +237,7 @@
 				20BE859022AD60E900988390 /* Main.storyboard */,
 				20C2EB1522BD1277000CC95B /* datePickerViewController.storyboard */,
 				20BE859522AD60EA00988390 /* LaunchScreen.storyboard */,
+				2034C86C22DED3E100D1374F /* BasePieChartView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -376,6 +379,7 @@
 			files = (
 				20C2EB1A22BD319C000CC95B /* tasksTableViewCell.swift in Sources */,
 				20C2EB3922CA6819000CC95B /* DateExtension.swift in Sources */,
+				2034C86D22DED3E100D1374F /* BasePieChartView.swift in Sources */,
 				20BE858F22AD60E900988390 /* statsViewComtroller.swift in Sources */,
 				20A4BDD222B143F200833BD2 /* addTasksViewController.swift in Sources */,
 				20BE858B22AD60E900988390 /* AppDelegate.swift in Sources */,

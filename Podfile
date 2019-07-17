@@ -9,4 +9,5 @@ target 'todo' do
 
   pod 'JTAppleCalendar'
   pod 'Charts'
+  pod 'Macaw', '0.9.5'
 end

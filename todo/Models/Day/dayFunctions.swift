@@ -24,7 +24,7 @@ class dayFunctions {
     static func readDays(completion: @escaping () -> ()) {
         DispatchQueue.global(qos: .userInteractive).async {
             if Data.dayModels.count == 0 {
-//                Data.dayModels = mockData.createMockDayModelsData()
+                Data.dayModels = mockData.createMockDayModelsData()
             }
             DispatchQueue.main.async {
                 completion()
